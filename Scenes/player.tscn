@@ -10,7 +10,8 @@
 transform = Transform3D(2.675, 0, 0, 0, 2.675, 0, 0, 0, 2.675, 0, 0, 0)
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1246339923 groups=["player"]]
-collision_layer = 2
+collision_layer = 32770
+collision_mask = 32769
 script = ExtResource("1_v0iea")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1461526451 groups=["player"]]
@@ -20,4 +21,4 @@ shape = SubResource("CapsuleShape3D_f60y1")
 mesh = SubResource("CapsuleMesh_f60y1")
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=534674644 groups=["player"]]
-transform = Transform3D(0.37383178, 0, 0, 0, 0.37383178, 0, 0, 0, 0.37383178, 0, 0.6029984, -0.363896)
+transform = Transform3D(0.37383178, 0, 0, 0, 0.37383178, 0, 0, 0, 0.37383178, 0, 0.603, 0)

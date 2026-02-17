@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cniihkxypw8fc"]
+
+[ext_resource type="Texture2D" uid="uid://bqjo5xjwti3m" path="res://Assets/models/living_room_prototype_woodCruch.jpg" id="1_1lo7p"]
+
+[resource]
+disable_ambient_light = true
+albedo_texture = ExtResource("1_1lo7p")

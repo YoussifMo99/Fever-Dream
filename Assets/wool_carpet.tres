@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ddrcfm3xebrd7"]
+
+[ext_resource type="Texture2D" uid="uid://dd061xr4t7s1f" path="res://Assets/models/living_room_prototype_grey_woll.png" id="1_ocm7f"]
+
+[resource]
+disable_ambient_light = true
+albedo_texture = ExtResource("1_ocm7f")
