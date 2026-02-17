@@ -6,6 +6,11 @@ const SPRINT_SPEED = 20.0
 const JUMP_VELOCITY = 15
 const SENSITIVITY = 0.004
 
+var idle_timer: float = 0.0
+const IDLE_THRESHOLD: float = 3
+
+var in_target_area: bool = false
+
 var gravity = 40
 var mouse_captured := true
 
@@ -16,12 +21,14 @@ var current_delta
 
 @onready var player: CharacterBody3D = $"."
 @onready var camera: Camera3D = $Camera3D
-
+@onready var forback: Portal3D = $"../../PinkIsland/FORBACK"
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("player")
 	print("PLAYER READY - Groups: ", get_groups())
+	forback.deactivate()
+	
 
 
 func _unhandled_input(event):
@@ -52,9 +59,7 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
-
 func _physics_process(delta):
-	
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -85,3 +90,16 @@ func _physics_process(delta):
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 
 	move_and_slide()
+	
+	if not in_target_area:
+		idle_timer = 0.0
+		return
+	var is_moving = velocity.length() > 0.0
+	if is_moving:
+		idle_timer = 0.0
+	else:
+		idle_timer += delta
+		if idle_timer >= IDLE_THRESHOLD:
+			forback.activate()
+			idle_timer = 0.0
+			
