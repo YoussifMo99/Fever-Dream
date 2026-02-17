@@ -1,0 +1,51 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://77qumy3xaxeo"]
+
+[ext_resource type="Shader" uid="uid://pf0243aqeyg6" path="res://Assets/grass.gdshader" id="1_vf6pp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_krx8h"]
+render_priority = 0
+shader = ExtResource("1_vf6pp")
+shader_parameter/sway = 1.14
+shader_parameter/sway_ = 0.34
+shader_parameter/sway_pow = 1.3
+shader_parameter/grass_roughness = 0.3
+shader_parameter/sway_noise_sampeling_scale = 0.12
+shader_parameter/sway_time_scale = 0.2
+shader_parameter/sway_dir = Vector3(1, 0, 1)
+shader_parameter/color_scale = 0.3
+shader_parameter/color_grad_height = -0.5
+shader_parameter/top_color = Color(0, 0.87058824, 0.3019608, 1)
+shader_parameter/bot_color = Color(0.25169957, 0.50181174, 0.26390195, 1)
+shader_parameter/grass_scale = Vector3(1, 1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6dfdv"]
+_surfaces = [{
+"aabb": AABB(-2.0330868, -1.8774891, -1.4447403, 3.4302387, 5.276993, 3.3553505),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEA"),
+"name": "Material.007",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("VI0SEclqAAAAAGbx8HUAAB20BB2QdwAAYYZADVV0AACwnFX/Z3QAABWzQA1VdAAA8oIyCHdxAAD//1vsTF4AAEWtAABdagAAf5DFDmB9AABJsP//UWcAAGyeIw71UQAAM4rdEqRzAAB5f0D0//8AAFqjuR3wUQAAQIzjCdJ/AADIuInsAAAAAAOSZQGEVAAA")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "pink_tree_island_blockout (1)_Plane_011"
+_surfaces = [{
+"aabb": AABB(-2.0330868, -1.8774891, -1.4447403, 3.4302387, 5.276993, 3.3553505),
+"attribute_data": PackedByteArray("AAD//wAAAAD/////AAD//wAAAAD/////AAD//wAAAAD/////AAD//wAAAAD/////AAD//wAAAAD/////AAD//wAAAAD/////"),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEA"),
+"material": SubResource("ShaderMaterial_krx8h"),
+"name": "Material.007",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("VI0SEclqbJUAAGbx8HVslR20BB2Qd2yVYYZADVV0AICwnFX/Z3QAgBWzQA1VdACA8oIyCHdxYI3//1vsTF5gjUWtAABdamCNf5DFDmB9HrNJsP//UWces2yeIw71UR6zM4rdEqRzhqp5f0D0//+GqlqjuR3wUYaqQIzjCdJ/IbvIuInsAAAhuwOSZQGEVCG7iizP84osz/OKLM/zAAD/fwAA/38AAP9/HYW7Ux2Fu1MdhbtTIHxmCSB8ZgkgfGYJ+UyGHflMhh35TIYdgYrSHoGK0h6BitIe")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6dfdv")
