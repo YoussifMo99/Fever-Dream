@@ -54,7 +54,7 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
-
+	
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chkkfa2iym74d"]
+
+[ext_resource type="Texture2D" uid="uid://b4wwgfbqwg52t" path="res://Assets/models/acient_portal_dry_riverbed_rock_diff_2k_11zon.jpg" id="1_3n100"]
+
+[resource]
+disable_ambient_light = true
+albedo_texture = ExtResource("1_3n100")

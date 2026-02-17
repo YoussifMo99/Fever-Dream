@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Strange Places"
+run/main_scene="uid://c8xh41wj1kidl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/portals/plugin.cfg")
 
 [input]
 
