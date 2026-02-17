@@ -646,6 +646,13 @@ script = ExtResource("14_6cuo6")
 transform = Transform3D(226.71321, 0, 0, 0, 26.367228, 0, 0, 0, 210.3232, 0, 0, 0)
 shape = SubResource("BoxShape3D_s2pl6")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=390511875]
+offset_left = 348.0
+offset_top = 127.0
+offset_right = 437.0
+offset_bottom = 158.0
+text = "kasdjnao"
+
 [connection signal="body_entered" from="forestarea" to="forestarea" method="_on_body_entered"]
 [connection signal="body_exited" from="forestarea" to="forestarea" method="_on_body_exited"]
 
