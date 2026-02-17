@@ -1,8 +1,19 @@
 extends Node2D
 
 var entered_code = []
+var circles = []
 
 func _ready():
+	circles = [
+		get_node("VBoxContainer/SCREEN/circle1"),
+		get_node("VBoxContainer/SCREEN/circle2"),
+		get_node("VBoxContainer/SCREEN/circle3"),
+		get_node("VBoxContainer/SCREEN/circle4"),
+	]
+	
+	for circle in circles:
+		circle.modulate.a = 0
+	
 	get_node("VBoxContainer/ROW1/1").pressed.connect(_on_button_pressed.bind(1))
 	get_node("VBoxContainer/ROW1/2").pressed.connect(_on_button_pressed.bind(2))
 	get_node("VBoxContainer/ROW1/3").pressed.connect(_on_button_pressed.bind(3))
@@ -18,6 +29,7 @@ func _ready():
 func _on_button_pressed(value):
 	if entered_code.size() < 4:
 		entered_code.append(value)
+		circles[entered_code.size() - 1].modulate.a = 1
 		print(entered_code)
 
 func _on_enter_pressed():
@@ -26,3 +38,5 @@ func _on_enter_pressed():
 	else:
 		print("wrong!")
 	entered_code.clear()
+	for circle in circles:
+		circle.modulate.a = 0
