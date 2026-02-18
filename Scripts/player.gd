@@ -23,6 +23,8 @@ var current_delta
 @onready var camera: Camera3D = $Camera3D
 @onready var forback: Portal3D = $"../PinkIsland/acient_portal_2/acient_portal/Portal3D"
 
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("player")
