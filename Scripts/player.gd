@@ -1,109 +1,109 @@
 extends CharacterBody3D
 
 var speed
-const WALK_SPEED = 10.0
-const SPRINT_SPEED = 20.0
-const JUMP_VELOCITY = 15
-const SENSITIVITY = 0.004
-
-var idle_timer: float = 0.0
-const IDLE_THRESHOLD: float = 3
-
-var in_target_area: bool = false
-
-var gravity = 40
+var WALK_SPEED = 10.0
+var SPRINT_SPEED = 20.0
+var JUMP_VELOCITY = 15.0
+var SENSITIVITY = 0.004
+var in_water: bool = false
+var gravity = 40.0
 var mouse_captured := true
 
 # Mouse smoothing fix (web bug)
 var last_mouse_delta := Vector2.ZERO
 const MAX_DELTA_CHANGE := 100.0
 var current_delta
-
+@onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 @onready var player: CharacterBody3D = $"."
 @onready var camera: Camera3D = $Camera3D
-@onready var forback: Portal3D = $"../PinkIsland/acient_portal_2/acient_portal/Portal3D"
-
-
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("player")
 	print("PLAYER READY - Groups: ", get_groups())
-	forback.deactivate()
-	forback.activate()
-
+	color_rect.visible = false
 
 func _unhandled_input(event):
-
-	# Toggle with Escape
-	if event.is_action_pressed("ui_cancel"): # Escape by default
+	if event.is_action_pressed("ui_cancel"):
 		mouse_captured = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		return
-
-	# Click to recapture
 	if event is InputEventMouseButton and event.pressed and not mouse_captured:
 		mouse_captured = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		return
-
-	# Only rotate camera if captured
 	if mouse_captured and event is InputEventMouseMotion:
 		current_delta = event.relative
 		var delta_change = current_delta - last_mouse_delta
-
 		if delta_change.length() > MAX_DELTA_CHANGE:
 			return
-
 		last_mouse_delta = current_delta
-
 		player.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _physics_process(delta):
-	# Gravity
-	if not is_on_floor():
+	if in_water:
 		velocity.y -= gravity * delta
 
-	# Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		if Input.is_action_pressed("jump"):
+			velocity.y = lerp(velocity.y, 5.0, 5.0 * delta)
 
-	# Sprint
-	if Input.is_action_pressed("sprint"):
-		speed = SPRINT_SPEED
+		var direction = Vector3.ZERO
+
+		if Input.is_action_pressed("up"):
+			direction -= camera.global_transform.basis.z
+		if Input.is_action_pressed("down"):
+			direction += camera.global_transform.basis.z
+		if Input.is_action_pressed("left"):
+			direction -= camera.global_transform.basis.x
+		if Input.is_action_pressed("right"):
+			direction += camera.global_transform.basis.x
+
+		direction = direction.normalized()
+		velocity.x = lerp(velocity.x, direction.x * WALK_SPEED, 5.0 * delta)
+		velocity.y = lerp(velocity.y, direction.y * WALK_SPEED, 5.0 * delta)
+		velocity.z = lerp(velocity.z, direction.z * WALK_SPEED, 5.0 * delta)
+
 	else:
-		speed = WALK_SPEED
+		# Normal gravity
+		if not is_on_floor():
+			velocity.y -= gravity * delta
 
-	# Movement
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		# Jump
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 
-	if is_on_floor():
-		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
+		# Sprint
+		if Input.is_action_pressed("sprint"):
+			speed = SPRINT_SPEED
 		else:
-			velocity.x = lerp(velocity.x, 0.0, delta * 7.0)
-			velocity.z = lerp(velocity.z, 0.0, delta * 7.0)
-	else:
-		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
-		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+			speed = WALK_SPEED
+
+		# Movement
+		var input_dir = Input.get_vector("left", "right", "up", "down")
+		var direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if is_on_floor():
+			if direction:
+				velocity.x = direction.x * speed
+				velocity.z = direction.z * speed
+			else:
+				velocity.x = lerp(velocity.x, 0.0, delta * 7.0)
+				velocity.z = lerp(velocity.z, 0.0, delta * 7.0)
+		else:
+			velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
+			velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 
 	move_and_slide()
-	
-	if not in_target_area:
-		idle_timer = 0.0
-		return
-	var is_moving = velocity.length() > 0.0
-	if is_moving:
-		idle_timer = 0.0
-	else:
-		idle_timer += delta
-		if idle_timer >= IDLE_THRESHOLD:
-			forback.activate()
-			idle_timer = 0.0
-	forback.activate()
-	forback.activate()
-	forback.activate()
+
+
+func _on_waterarea_area_exited(area):
+	if area.is_in_group("head"):
+		print("head exited")
+		color_rect.visible = false
+
+
+func _on_waterarea_area_entered(area: Area3D) -> void:
+	if area.is_in_group("head"):
+		print("head entered")
+		color_rect.visible = true
