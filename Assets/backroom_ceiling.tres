@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://737edrj4kae5"]
+
+[ext_resource type="Texture2D" uid="uid://cxtw5nde6mtgq" path="res://Assets/backrooms_backrooms_ceiling.png" id="1_4hc5s"]
+
+[resource]
+disable_ambient_light = true
+albedo_color = Color(1, 1, 0.8745098, 1)
+albedo_texture = ExtResource("1_4hc5s")
