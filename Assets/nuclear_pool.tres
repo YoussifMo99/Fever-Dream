@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bucvnv4qdlfu4"]
+
+[ext_resource type="Texture2D" uid="uid://bx0qn4osodyn8" path="res://Assets/models/nuclear_pool_reactor_pool.jpg" id="1_24kqo"]
+
+[resource]
+disable_ambient_light = true
+albedo_texture = ExtResource("1_24kqo")

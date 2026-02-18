@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cjqobl74x1d5v"]
+
+[ext_resource type="Texture2D" uid="uid://dowhtuwbhsa3p" path="res://Assets/backrooms_backrooms_carpet.webp" id="1_8gvvs"]
+
+[resource]
+disable_ambient_light = true
+albedo_texture = ExtResource("1_8gvvs")

@@ -21,14 +21,14 @@ var current_delta
 
 @onready var player: CharacterBody3D = $"."
 @onready var camera: Camera3D = $Camera3D
-@onready var forback: Portal3D = $"../../PinkIsland/FORBACK"
+@onready var forback: Portal3D = $"../PinkIsland/acient_portal_2/acient_portal/Portal3D"
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("player")
 	print("PLAYER READY - Groups: ", get_groups())
 	forback.deactivate()
-	
+	forback.activate()
 
 
 func _unhandled_input(event):
@@ -102,4 +102,6 @@ func _physics_process(delta):
 		if idle_timer >= IDLE_THRESHOLD:
 			forback.activate()
 			idle_timer = 0.0
-			
+	forback.activate()
+	forback.activate()
+	forback.activate()
