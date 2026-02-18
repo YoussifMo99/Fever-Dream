@@ -362,13 +362,12 @@ shader_parameter/ssr_screen_fade = 0.05
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s2pl6"]
 
-[node name="AllAssets" type="Node3D" unique_id=1343157809 node_paths=PackedStringArray("Hide")]
+[node name="AllAssets" type="Node3D" unique_id=1343157809]
 script = ExtResource("1_1d21h")
-Hide = [NodePath("Backrooms")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2051743552]
 transform = Transform3D(0.7145948, -0.3328464, -0.6152785, 0.69953865, 0.34001023, 0.6285211, 0, -0.8795489, 0.4758085, -8.954405, 11.15785, 0)
-light_cull_mask = 4294967293
+light_cull_mask = 4294966274
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1298356157]
@@ -384,7 +383,7 @@ text = "FPS"
 script = ExtResource("21_sknsr")
 
 [node name="Backrooms" type="Node3D" parent="." unique_id=1182482462]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2601.7258, 0, 1390.036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.81282, 0, -19.19983)
 
 [node name="Optimization" type="Area3D" parent="Backrooms" unique_id=1479092607 node_paths=PackedStringArray("Kill")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.271973, 0, 19.732666)
@@ -400,38 +399,32 @@ shape = SubResource("BoxShape3D_1d21h")
 [node name="Lights" type="Node3D" parent="Backrooms" unique_id=2141865290]
 transform = Transform3D(2.0349998, 0, 0, 0, 2.0349998, 0, 0, 0, 2.0349998, 0, 0, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Backrooms/Lights" unique_id=273824368]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.247559, 4.3757443, -13.912964)
-light_color = Color(1, 1, 0.91764706, 1)
-light_energy = 3.47
-light_bake_mode = 0
-shadow_enabled = true
-shadow_opacity = 0.76
-omni_range = 80.19529
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="Backrooms/Lights" unique_id=2050616071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.79541, 4.3757443, 10.967407)
-light_color = Color(1, 1, 0.91764706, 1)
-light_energy = 2.211
-light_bake_mode = 0
-shadow_enabled = true
-shadow_opacity = 0.76
-omni_range = 37.504906
-
 [node name="OmniLight3D3" type="OmniLight3D" parent="Backrooms/Lights" unique_id=721881402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8303223, 4.3757443, 2.4225464)
 light_color = Color(1, 1, 0.91764706, 1)
 light_energy = 1.852
 light_bake_mode = 0
+light_cull_mask = 4294966276
 shadow_enabled = true
 shadow_opacity = 0.76
 omni_range = 80.19529
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Backrooms/Lights" unique_id=602902129]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8303223, 4.3757443, -11.6640625)
+[node name="OmniLight3D4" type="OmniLight3D" parent="Backrooms/Lights" unique_id=1013817857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8303223, 4.3757443, -12.23645)
 light_color = Color(1, 1, 0.91764706, 1)
-light_energy = 1.617
+light_energy = 1.852
 light_bake_mode = 0
+light_cull_mask = 4294966276
+shadow_enabled = true
+shadow_opacity = 0.76
+omni_range = 80.19529
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Backrooms/Lights" unique_id=467427307]
+transform = Transform3D(0.49140054, 0, 0, 0, 0.49140054, 0, 0, 0, 0.49140054, -24.995728, 4.3757443, -15.446045)
+light_color = Color(1, 1, 0.91764706, 1)
+light_energy = 1.852
+light_bake_mode = 0
+light_cull_mask = 4294966276
 shadow_enabled = true
 shadow_opacity = 0.76
 omni_range = 80.19529
@@ -441,6 +434,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.471924, 4.3757443, 14.3743
 light_color = Color(1, 1, 0.91764706, 1)
 light_energy = 0.504
 light_bake_mode = 0
+light_cull_mask = 4294966276
 omni_range = 80.19529
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="Backrooms/Lights" unique_id=633241711]
@@ -448,13 +442,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.259277, 4.3757443, 14.37432
 light_color = Color(1, 1, 0.91764706, 1)
 light_energy = 0.504
 light_bake_mode = 0
+light_cull_mask = 4294966276
 omni_range = 80.19529
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="Backrooms/Lights" unique_id=322159648]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.121338, 4.3757443, 0.5435791)
+layers = 4
 light_color = Color(1, 1, 0.91764706, 1)
 light_energy = 1.313
 light_bake_mode = 0
+light_cull_mask = 4294966276
+omni_range = 80.19529
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Backrooms/Lights" unique_id=1245524534]
+transform = Transform3D(0.49140054, 0, 0, 0, 0.49140054, 0, 0, 0, 0.49140054, 23.032959, 4.3757443, -12.346558)
+layers = 4
+light_color = Color(1, 1, 0.91764706, 1)
+light_energy = 1.83
+light_bake_mode = 0
+light_cull_mask = 4294966276
 omni_range = 80.19529
 
 [node name="BackRooms" type="StaticBody3D" parent="Backrooms" unique_id=145293094]
@@ -473,25 +479,25 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0,
 shape = SubResource("ConcavePolygonShape3D_y7jbw")
 
 [node name="Cube" type="MeshInstance3D" parent="Backrooms/BackRooms" unique_id=656368706]
-layers = 2
+layers = 4
 mesh = SubResource("ArrayMesh_5dxcc")
 surface_material_override/0 = ExtResource("3_5f8nk")
 
 [node name="Plane" type="MeshInstance3D" parent="Backrooms/BackRooms" unique_id=234920134]
-layers = 2
+layers = 4
 mesh = SubResource("ArrayMesh_xfkxf")
 surface_material_override/0 = ExtResource("5_xoi51")
 
 [node name="Plane_001" type="MeshInstance3D" parent="Backrooms/BackRooms" unique_id=1763327173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08691406, -0.046237506, 0.023986816)
-layers = 2
+layers = 4
 mesh = SubResource("ArrayMesh_4usin")
 surface_material_override/0 = ExtResource("6_xoi51")
 
 [node name="Lights" type="MeshInstance3D" parent="Backrooms/BackRooms" unique_id=1689602360]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -2.5510345, 4.6516113)
 visible = false
-layers = 2
+layers = 4
 mesh = SubResource("ArrayMesh_3unps")
 
 [node name="acient_portal_3" type="Node3D" parent="Backrooms" unique_id=1289958066]
@@ -576,11 +582,12 @@ transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0
 shape = SubResource("ConcavePolygonShape3D_6cuo6")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Backrooms/acient_portal_4/acient_portal" unique_id=544132591]
-transform = Transform3D(-0.40898344, 0, 0.9125417, 0, 1, 0, -0.9125417, 0, -0.40898344, -3.6088867, 3.2896388, -0.20629883)
+transform = Transform3D(-0.40898344, 0, 0.9125417, 0, 1, 0, -0.9125417, 0, -0.40898344, -14.156616, 6.496113, -0.20629883)
+layers = 4
 light_color = Color(0.8952172, 0.79117566, 0.60124695, 1)
 light_energy = 2.589
 light_bake_mode = 0
-omni_range = 13.098
+omni_range = 35.480453
 
 [node name="Portal3D" type="Node3D" parent="Backrooms/acient_portal_4/acient_portal" unique_id=809168355 node_paths=PackedStringArray("exit_portal") groups=["portals"]]
 process_priority = 100
@@ -682,13 +689,81 @@ omni_range = 13.098
 [node name="pink_tree_island_blockout (1)" parent="PinkIsland" unique_id=137869204 instance=ExtResource("6_pmtsq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3584.5266)
 
-[node name="Tree" parent="PinkIsland/pink_tree_island_blockout (1)" index="0" unique_id=1687723378]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.266168, 23.83265, -13.95166)
+[node name="StaticBody3D" type="StaticBody3D" parent="PinkIsland/pink_tree_island_blockout (1)" unique_id=1861236017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.220009, 0.47602093, -19.04712)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PinkIsland/pink_tree_island_blockout (1)/Plane_001" parent_id_path=PackedInt32Array(137869204, 229295918) index="0" unique_id=1861236017]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PinkIsland/pink_tree_island_blockout (1)/Plane_001/StaticBody3D" unique_id=98979028]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PinkIsland/pink_tree_island_blockout (1)/StaticBody3D" unique_id=98979028]
 shape = SubResource("ConcavePolygonShape3D_uhi2g")
+
+[node name="Tree" parent="PinkIsland/pink_tree_island_blockout (1)" index="1" unique_id=1687723378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.266168, 23.83265, -13.95166)
+layers = 2
+
+[node name="Tree_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="2" unique_id=749519462]
+layers = 2
+
+[node name="Tree_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="3" unique_id=1238142816]
+layers = 2
+
+[node name="Tree_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="4" unique_id=1833538016]
+layers = 2
+
+[node name="Tree_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="5" unique_id=1893441415]
+layers = 2
+
+[node name="Rock" parent="PinkIsland/pink_tree_island_blockout (1)" index="6" unique_id=489761628]
+layers = 2
+
+[node name="Rock_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="7" unique_id=1971077742]
+layers = 2
+
+[node name="Rock_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="8" unique_id=1103137257]
+layers = 2
+
+[node name="Tree_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="9" unique_id=1197785875]
+layers = 2
+
+[node name="Tree_006" parent="PinkIsland/pink_tree_island_blockout (1)" index="10" unique_id=629354451]
+layers = 2
+
+[node name="Tree_007" parent="PinkIsland/pink_tree_island_blockout (1)" index="11" unique_id=350676050]
+layers = 2
+
+[node name="Rock_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="12" unique_id=1393606788]
+layers = 2
+
+[node name="Tree_008" parent="PinkIsland/pink_tree_island_blockout (1)" index="13" unique_id=283115827]
+layers = 2
+
+[node name="Rock_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="14" unique_id=2019690883]
+layers = 2
+
+[node name="Rock_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="15" unique_id=2140932388]
+layers = 2
+
+[node name="Grass1" parent="PinkIsland/pink_tree_island_blockout (1)" index="16" unique_id=1674453410]
+layers = 2
+
+[node name="Plane_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="17" unique_id=229295918]
+layers = 2
+
+[node name="Grass1_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="18" unique_id=308748061]
+layers = 2
+
+[node name="Grass1_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="19" unique_id=1184883625]
+layers = 2
+
+[node name="Grass1_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="20" unique_id=1131144107]
+layers = 2
+
+[node name="Grass1_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="21" unique_id=1583154430]
+layers = 2
+
+[node name="Grass1_006" parent="PinkIsland/pink_tree_island_blockout (1)" index="22" unique_id=14052139]
+layers = 2
+
+[node name="Grass1_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="23" unique_id=1393944092]
+layers = 2
 
 [node name="acient_portal_2" type="Node3D" parent="PinkIsland" unique_id=281345487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.190358, 14.775941, 3523.9167)
@@ -790,82 +865,52 @@ surface_material_override/0 = SubResource("StandardMaterial3D_uhi2g")
 transform = Transform3D(5.61, 0, 0, 0, 5.61, 0, 0, 0, 5.61, -2.3829424, 0, 0.21509123)
 
 [node name="Room_Walls" parent="LivingRoom/living_room_prototype" index="0" unique_id=953051717]
-layers = 2
 surface_material_override/0 = ExtResource("9_s2pl6")
 surface_material_override/1 = ExtResource("3_6fv87")
 
 [node name="Table" parent="LivingRoom/living_room_prototype" index="1" unique_id=2006951581]
-layers = 2
 surface_material_override/0 = ExtResource("11_s2pl6")
 
 [node name="Shelves" parent="LivingRoom/living_room_prototype" index="2" unique_id=545360055]
-layers = 2
 surface_material_override/0 = ExtResource("11_s2pl6")
 
-[node name="TV" parent="LivingRoom/living_room_prototype" index="3" unique_id=830832354]
-layers = 2
-
-[node name="BeanBag" parent="LivingRoom/living_room_prototype" index="4" unique_id=1710989071]
-layers = 2
-
 [node name="Lamp" parent="LivingRoom/living_room_prototype" index="5" unique_id=47912659]
-layers = 2
 surface_material_override/0 = ExtResource("9_s2pl6")
 surface_material_override/1 = ExtResource("12_6cuo6")
 
 [node name="Painting" parent="LivingRoom/living_room_prototype" index="6" unique_id=382403083]
-layers = 2
 surface_material_override/0 = ExtResource("11_s2pl6")
 
 [node name="Plant" parent="LivingRoom/living_room_prototype" index="7" unique_id=1662649767]
-layers = 2
 surface_material_override/1 = ExtResource("12_6cuo6")
 
-[node name="Shose" parent="LivingRoom/living_room_prototype" index="8" unique_id=972525890]
-layers = 2
-
 [node name="Coutch" parent="LivingRoom/living_room_prototype" index="9" unique_id=2146212395]
-layers = 2
 surface_material_override/0 = ExtResource("12_6cuo6")
 
 [node name="CoutchHitbox" parent="LivingRoom/living_room_prototype" index="10" unique_id=1675841390]
 visible = false
-layers = 2
 
 [node name="Coutch_001" parent="LivingRoom/living_room_prototype" index="11" unique_id=1611030088]
-layers = 2
 surface_material_override/0 = ExtResource("12_6cuo6")
 
 [node name="CoutchHitbox_001" parent="LivingRoom/living_room_prototype" index="12" unique_id=2086282099]
 visible = false
-layers = 2
-
-[node name="OmniLight3D" type="OmniLight3D" parent="LivingRoom" unique_id=1297576049]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6650906, 2.7676666, 0.21509123)
-light_energy = 1.605
-light_indirect_energy = 8.38
-light_bake_mode = 0
-omni_range = 16.800325
 
 [node name="acient_portal" parent="LivingRoom" unique_id=1513975180 instance=ExtResource("2_26x8u")]
 transform = Transform3D(-0.40898356, 0, -0.91254175, 0, 1, 0, 0.91254175, 0, -0.40898356, -3.327, 0.065, 8.937)
 
 [node name="CollisionShape" parent="LivingRoom/acient_portal" index="0" unique_id=1663347638]
 visible = false
-layers = 2
 
 [node name="Cube_007" parent="LivingRoom/acient_portal" index="1" unique_id=268501361]
-layers = 2
 material_override = ExtResource("7_s2pl6")
-
-[node name="Plane" parent="LivingRoom/acient_portal" index="2" unique_id=1501091727]
-layers = 2
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="LivingRoom/acient_portal" unique_id=2051365004]
 transform = Transform3D(-0.40898356, 0, 0.91254175, 0, 1, 0, -0.91254175, 0, -0.40898356, -0.9857683, 2.7026672, -0.031021595)
 light_color = Color(0.8952172, 0.79117566, 0.60124695, 1)
 light_energy = 2.589
 light_bake_mode = 0
+light_cull_mask = 4294966273
 omni_range = 9.458697
 
 [node name="StaticBody3D" type="StaticBody3D" parent="LivingRoom/acient_portal" unique_id=1267770492]
@@ -943,6 +988,10 @@ shape = SubResource("ConcavePolygonShape3D_s2pl6")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="LivingRoom/StaticBody3D" unique_id=1567645648]
 transform = Transform3D(0, 0, 5.61, 0, 5.61, 0, -5.61, 0, 0, -6.785555, 0.6255377, -8.272181)
 shape = SubResource("ConcavePolygonShape3D_xrv6e")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LivingRoom" unique_id=1861467416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6533146, 3.4598265, 0)
+omni_range = 16.60595
 
 [node name="NuclearPool" type="Node3D" parent="." unique_id=1990678911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -293.0366)
@@ -1041,44 +1090,44 @@ omni_range = 68.99257
 transform = Transform3D(5.775, 0, 0, 0, 5.775, 0, 0, 0, 5.775, 30.667604, 0, 0)
 
 [node name="Cube" parent="NuclearPool/nuclear_pool" index="0" unique_id=1058327649]
-layers = 2
+layers = 8
 surface_material_override/0 = ExtResource("25_3unps")
 
 [node name="Cylinder" parent="NuclearPool/nuclear_pool" index="1" unique_id=1627483241]
-layers = 2
+layers = 8
 surface_material_override/0 = ExtResource("25_3unps")
 surface_material_override/1 = ExtResource("26_4usin")
 
 [node name="Cylinder_002" parent="NuclearPool/nuclear_pool" index="2" unique_id=1923920894]
-layers = 2
+layers = 8
 material_override = ExtResource("25_3unps")
 
 [node name="Cylinder_001" parent="NuclearPool/nuclear_pool" index="3" unique_id=715134179]
-layers = 2
+layers = 8
 material_override = ExtResource("25_3unps")
 
 [node name="Cube_004" parent="NuclearPool/nuclear_pool" index="4" unique_id=767254750]
-layers = 2
+layers = 8
 material_override = ExtResource("26_4usin")
 
 [node name="Plane" parent="NuclearPool/nuclear_pool" index="5" unique_id=2125745691]
 visible = false
-layers = 2
+layers = 8
 
 [node name="Cube_001" parent="NuclearPool/nuclear_pool" index="6" unique_id=887590867]
-layers = 2
+layers = 8
 surface_material_override/0 = ExtResource("26_4usin")
 
 [node name="Cylinder_003" parent="NuclearPool/nuclear_pool" index="7" unique_id=1388367686]
-layers = 2
+layers = 8
 surface_material_override/0 = ExtResource("25_3unps")
 
 [node name="Cylinder_004" parent="NuclearPool/nuclear_pool" index="8" unique_id=1441792143]
-layers = 2
+layers = 8
 material_override = ExtResource("25_3unps")
 
 [node name="Cube_002" parent="NuclearPool/nuclear_pool" index="9" unique_id=1217109018]
-layers = 2
+layers = 8
 material_override = ExtResource("26_4usin")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NuclearPool/nuclear_pool" unique_id=1885295241]
