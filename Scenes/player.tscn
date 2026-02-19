@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d1chrqqwms3cr"]
 
 [ext_resource type="Script" uid="uid://cnpl6fp5a4s7j" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://rbm7q3y7mail" path="res://Scenes/password.tscn" id="2_cvnsp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
 radius = 1.3535156
@@ -45,3 +46,9 @@ color = Color(0, 0.20960158, 0.17653987, 0.30980393)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="head" unique_id=1325282655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4696612, 0)
 shape = SubResource("SphereShape3D_v0iea")
+
+[node name="Password" type="CanvasLayer" parent="." unique_id=1439549713]
+visible = false
+
+[node name="PASSWORD" parent="Password" unique_id=1261077482 instance=ExtResource("2_cvnsp")]
+visible = false
