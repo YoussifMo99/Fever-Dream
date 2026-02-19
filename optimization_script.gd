@@ -6,7 +6,9 @@ extends Area3D
 
 
 func _on_body_entered(body):
-	print(body, "entered optimization area")
+	self.monitoring = false
+	self.monitoring = false
+	#print(body, "entered optimization area")
 	if body.is_in_group("player"):
 		
 		for node in Hide:

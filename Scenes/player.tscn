@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnpl6fp5a4s7j" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://rbm7q3y7mail" path="res://Scenes/password.tscn" id="2_cvnsp"]
+[ext_resource type="AudioStream" uid="uid://bkgqu3cekeetn" path="res://Assets/SFX/707574__lenayrossouw__under-water-ambianceowi.wav" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
 radius = 1.3535156
@@ -39,7 +40,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0.20960158, 0.17653987, 0.30980393)
+color = Color(0.061760776, 0.14880458, 0.38978255, 0.30980393)
 
 [node name="head" type="Area3D" parent="." unique_id=160012703 groups=["head", "player"]]
 
@@ -52,3 +53,9 @@ visible = false
 
 [node name="PASSWORD" parent="Password" unique_id=1261077482 instance=ExtResource("2_cvnsp")]
 visible = false
+
+[node name="underwater" type="AudioStreamPlayer" parent="." unique_id=685310176]
+stream = ExtResource("3_6t5aa")
+volume_db = 10.236
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=888324303]

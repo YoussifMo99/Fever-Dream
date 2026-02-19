@@ -97,13 +97,27 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_waterarea_area_exited(area):
-	if area.is_in_group("head"):
-		print("head exited")
-		color_rect.visible = false
-
+@onready var underwater_sfx: AudioStreamPlayer = $underwater
+var fade_tween: Tween
 
 func _on_waterarea_area_entered(area: Area3D) -> void:
 	if area.is_in_group("head"):
 		print("head entered")
 		color_rect.visible = true
+		
+		if fade_tween: fade_tween.kill()
+		underwater_sfx.volume_db = -60
+		underwater_sfx.play()
+		fade_tween = create_tween()
+		fade_tween.tween_property(underwater_sfx, "volume_db", 0.0, 0.4)
+
+
+func _on_waterarea_area_exited(area):
+	if area.is_in_group("head"):
+		print("head exited")
+		color_rect.visible = false
+		
+		if fade_tween: fade_tween.kill()
+		fade_tween = create_tween()
+		fade_tween.tween_property(underwater_sfx, "volume_db", -60.0, 0.4)
+		fade_tween.tween_callback(underwater_sfx.stop)

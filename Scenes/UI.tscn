@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4blnlxjikt8q" path="res://Scenes/ui.gd" id="1_w371h"]
 [ext_resource type="Script" uid="uid://cnsc3oc538rfv" path="res://Scenes/volume_slider.gd" id="2_nxvpl"]
-[ext_resource type="AudioStream" uid="uid://ddagilpxmaxlk" path="res://Assets/NuclearShaftAmbience.mp3" id="3_dewlx"]
+[ext_resource type="AudioStream" uid="uid://ddagilpxmaxlk" path="res://Assets/SFX/NuclearShaftAmbience.mp3" id="3_dewlx"]
 
 [node name="UI" type="Node2D" unique_id=2008831037]
 script = ExtResource("1_w371h")
