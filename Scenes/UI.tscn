@@ -7,29 +7,18 @@
 [node name="UI" type="Node2D" unique_id=2008831037]
 script = ExtResource("1_w371h")
 
-[node name="MASTER" type="HSlider" parent="." unique_id=1615683751]
-offset_left = 301.0
-offset_top = 46.0
-offset_right = 807.0
-offset_bottom = 62.0
-step = 0.001
-value = 0.001
-script = ExtResource("2_nxvpl")
-bus_name = "Master"
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1375621435]
 stream = ExtResource("3_dewlx")
 autoplay = true
 
 [node name="SFX" type="HSlider" parent="." unique_id=420653367]
-offset_left = 315.0
-offset_top = 351.0
-offset_right = 821.0
-offset_bottom = 367.0
+offset_left = 295.0
+offset_top = 497.0
+offset_right = 801.0
+offset_bottom = 513.0
 step = 0.001
 value = 0.001
 script = ExtResource("2_nxvpl")
-bus_name = "SFX"
 
 [node name="Label" type="Label" parent="SFX" unique_id=932676416]
 layout_mode = 0
@@ -42,14 +31,13 @@ text = "SFX
 "
 
 [node name="MUSIC" type="HSlider" parent="." unique_id=553006474]
-offset_left = 311.0
-offset_top = 203.0
-offset_right = 817.0
-offset_bottom = 219.0
+offset_left = 291.0
+offset_top = 349.0
+offset_right = 797.0
+offset_bottom = 365.0
 step = 0.001
 value = 0.001
 script = ExtResource("2_nxvpl")
-bus_name = "MUSIC"
 
 [node name="Label" type="Label" parent="MUSIC" unique_id=1643985176]
 layout_mode = 0
@@ -61,14 +49,13 @@ theme_override_font_sizes/font_size = 23
 text = "MUSIC"
 
 [node name="VOICE" type="HSlider" parent="." unique_id=646780102]
-offset_left = 317.0
-offset_top = 270.0
-offset_right = 823.0
-offset_bottom = 286.0
+offset_left = 297.0
+offset_top = 416.0
+offset_right = 803.0
+offset_bottom = 432.0
 step = 0.001
 value = 0.001
 script = ExtResource("2_nxvpl")
-bus_name = "VOICE"
 
 [node name="Label" type="Label" parent="VOICE" unique_id=111589901]
 layout_mode = 0
@@ -79,7 +66,33 @@ offset_bottom = 1.0
 theme_override_font_sizes/font_size = 23
 text = "VOICE"
 
-[connection signal="value_changed" from="MASTER" to="MASTER" method="_on_value_changed"]
+[node name="mouse sensitivity" type="HSlider" parent="." unique_id=1889794934]
+offset_left = 293.0
+offset_top = 161.0
+offset_right = 799.0
+offset_bottom = 177.0
+step = 0.001
+value = 0.001
+script = ExtResource("2_nxvpl")
+
+[node name="Label" type="Label" parent="mouse sensitivity" unique_id=2110288012]
+layout_mode = 0
+offset_left = 204.0
+offset_top = -42.0
+offset_right = 318.0
+offset_bottom = -10.0
+theme_override_font_sizes/font_size = 23
+text = "Sensitivity"
+
+[node name="Button" type="Button" parent="." unique_id=1135624896]
+offset_left = 59.0
+offset_top = 555.0
+offset_right = 138.0
+offset_bottom = 599.0
+text = "back"
+
 [connection signal="value_changed" from="SFX" to="SFX" method="_on_value_changed"]
 [connection signal="value_changed" from="MUSIC" to="MUSIC" method="_on_value_changed"]
 [connection signal="value_changed" from="VOICE" to="VOICE" method="_on_value_changed"]
+[connection signal="value_changed" from="mouse sensitivity" to="mouse sensitivity" method="_on_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

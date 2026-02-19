@@ -1,15 +1,15 @@
 extends HSlider
-@export var bus_name: String
-var bus_index: int
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	bus_index = AudioServer.get_bus_index(bus_name)
-	value = db_to_linear(
-		AudioServer.get_bus_volume_db(bus_index)
-	)
+var config = ConfigFile.new()
+const SAVE_PATH = "user://settings.cfg"
 
-func _on_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(
-		bus_index, linear_to_db(value)
-	)
+func _ready():
+	config.load(SAVE_PATH)
+	value = config.get_value("settings", "sensitivity", 0.004)
+	min_value = 0.001
+	max_value = 0.01
+	step = 0.0001
+
+func _on_value_changed(val):
+	config.set_value("settings", "sensitivity", val)
+	config.save(SAVE_PATH)

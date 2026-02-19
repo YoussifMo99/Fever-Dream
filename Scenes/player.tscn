@@ -32,7 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.603, 0)
 current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1355168198]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2031980891]
 visible = false
@@ -42,7 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.061760776, 0.14880458, 0.38978255, 0.30980393)
+color = Color(0.12941177, 0.38431373, 0.35686275, 0.41568628)
 
 [node name="head" type="Area3D" parent="." unique_id=160012703 groups=["head", "player"]]
 

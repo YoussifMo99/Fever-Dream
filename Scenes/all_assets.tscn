@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://hm5gpuk24cvm" path="res://Assets/models/stone_wall_dry_riverbed_rock_diff_2k_11zon.jpg" id="31_lcgkv"]
 [ext_resource type="Texture2D" uid="uid://v0e4m7r7kyrm" path="res://Assets/models/stone_track_dry_riverbed_rock_diff_2k_11zon.jpg" id="32_fed7n"]
 [ext_resource type="Texture2D" uid="uid://c267o1hn4hcdi" path="res://Assets/models/stone_block_dry_riverbed_rock_diff_2k_11zon.jpg" id="33_x7uln"]
-[ext_resource type="Script" uid="uid://dif86526xiyqr" path="res://scripts/orbsarea.gd" id="33_ytd2b"]
+[ext_resource type="Script" uid="uid://dif86526xiyqr" path="res://Scripts/orbsarea.gd" id="33_ytd2b"]
 [ext_resource type="Texture2D" uid="uid://cywbdqchkxuw1" path="res://Assets/models/hanging_block_wall_dry_riverbed_rock_diff_2k_11zon.jpg" id="34_ln4qj"]
 [ext_resource type="Texture2D" uid="uid://ch1dr0y6r3114" path="res://Assets/models/hanging_block_wall_sparse_grass_diff_2k.jpg" id="35_5ce5f"]
 [ext_resource type="Script" uid="uid://0fvuo018it7e" path="res://Scripts/cloudarea.gd" id="36_x7uln"]
@@ -155,31 +155,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_jvdve"]
 resource_name = "opening"
-length = 2.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../vent_shaft/Cube:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.42055416, 0.31886312, 14.442681), Vector3(-0.42055416, 0.9769128, 14.442681)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../vent_shaft/CollisionShape3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.42055416, 0.9769128, 14.442681), Vector3(-0.42055416, 0.9769128, 14.442681)]
-}
+length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ytd2b"]
 _data = {
@@ -496,7 +472,7 @@ shader_parameter/samplermix = 0.5
 shader_parameter/samplerscale = Vector2(0.025, 0.03)
 shader_parameter/normal1tex = SubResource("NoiseTexture2D_sj1yd")
 shader_parameter/normal2tex = SubResource("NoiseTexture2D_45oxd")
-shader_parameter/normalstrength = 0.22999999485904
+shader_parameter/normalstrength = 0.38999999128272
 shader_parameter/height1tex = SubResource("NoiseTexture2D_sj1yd")
 shader_parameter/height2tex = SubResource("NoiseTexture2D_sj1yd")
 shader_parameter/heightstrength = 0.12
@@ -912,7 +888,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../vent_shaft/Cube:position")
+tracks/0/path = NodePath("Cube:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -924,7 +900,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../vent_shaft/CollisionShape3D:position")
+tracks/1/path = NodePath("CollisionShape3D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -940,7 +916,7 @@ length = 2.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../vent_shaft/Cube:position")
+tracks/0/path = NodePath("Cube:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -952,7 +928,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../vent_shaft/CollisionShape3D:position")
+tracks/1/path = NodePath("CollisionShape3D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1045,7 +1021,7 @@ Kill = [NodePath("../acient_portal_3"), NodePath("../../PinkIsland")]
 play = [NodePath("AnimationPlayer")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Backrooms/Optimization2" unique_id=1117428723]
-transform = Transform3D(0.96735626, 0, 0.25342026, 0, 1, 0, -0.25342026, 0, 0.96735626, -5.2768097, 5.9628906, -9.003609)
+transform = Transform3D(0.96735626, 0, 0.25342026, 0, 1, 0, -0.25342026, 0, 0.96735626, -0.42055416, 0.9769128, 14.442681)
 shape = SubResource("BoxShape3D_5ce5f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Backrooms/Optimization2" unique_id=1049757]
@@ -1450,6 +1426,7 @@ layers = 2
 layers = 2
 
 [node name="Plane_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="16" unique_id=405253007]
+transform = Transform3D(1.1578236, 0, 0, 0, 1, 0, 0, 0, 1, 6.7694855, 0.4760133, -19.104492)
 layers = 2
 
 [node name="Grass1_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="17" unique_id=1561134590]
@@ -2424,7 +2401,6 @@ transform = Transform3D(0.33456048, 0, 0, 0, 0.33456048, 0, 0, 0, 0.019190859, -
 layers = 32
 
 [node name="door" type="AnimationPlayer" parent="vent_shaft" unique_id=1607307224]
-root_node = NodePath("../../Backrooms/Optimization2")
 libraries/ = SubResource("AnimationLibrary_5ua6f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vent_shaft" unique_id=2114228058]

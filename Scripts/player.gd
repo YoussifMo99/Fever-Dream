@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+var config = ConfigFile.new()
+
 var speed
 var WALK_SPEED = 10.0
 var SPRINT_SPEED = 20.0
@@ -20,6 +22,8 @@ var current_delta
 @onready var password: CanvasLayer = $Password
 
 func _ready():
+	config.load("user://settings.cfg")
+	SENSITIVITY = config.get_value("settings", "sensitivity", 0.004)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("player")
 	print("PLAYER READY - Groups: ", get_groups())

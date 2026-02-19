@@ -1,9 +1,12 @@
 extends Node2D
 
+var correct = false
 var entered_code = []
 var circles = []
 @onready var passwordui: CanvasLayer = $"/root/AllAssets/Player/Password"
 @onready var player: CharacterBody3D = $"/root/AllAssets/Player"
+@onready var door: AnimationPlayer = $"../../../vent_shaft/door"
+
 func _ready():
 	circles = [
 		get_node("VBoxContainer/SCREEN/circle1"),
@@ -35,8 +38,13 @@ func _on_button_pressed(value):
 
 func _on_enter_pressed():
 	if entered_code == [1, 2, 3, 4]:
+		door.play("open")
+		door.play("open")
+		print("is playing: ", door.is_playing())
+		print("current anim: ", door.current_animation)
 		player.hide_ui(passwordui)
 		print("correct!")
+		correct = true
 	else:
 		print("wrong!")
 	entered_code.clear()
