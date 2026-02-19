@@ -4,6 +4,7 @@ extends Area3D
 @export var Kill: Array[Node3D]
 @export var Show: Array[Node3D]
 
+@export var play: Array[AnimationPlayer]
 
 func _on_body_entered(body):
 	self.monitoring = false
@@ -20,3 +21,7 @@ func _on_body_entered(body):
 		for node in Kill:
 			if is_instance_valid(node):
 				node.queue_free()
+
+		for node in play:
+			if is_instance_valid(node):
+				node.play("1")

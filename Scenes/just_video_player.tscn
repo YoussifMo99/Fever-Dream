@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://m3wwsve7otbw"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_tljcw"]
+file = "res://sounds/small_video.ogv"
+
+[node name="JustVideoPlayer" type="Node3D" unique_id=616475183]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1223327300]
+offset_right = 1150.0
+offset_bottom = 639.0
+stream = SubResource("VideoStreamTheora_tljcw")
+volume_db = 10.279999
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="VideoStreamPlayer" unique_id=631458692]
+position = Vector2(577, 325)

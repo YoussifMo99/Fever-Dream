@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvxhvu3iue4r8"]
+
+[ext_resource type="Texture2D" uid="uid://c5uu5d37rm6fw" path="res://Assets/models/vent_shaft_vent_shaft_texture.jpg" id="1_nva6a"]
+
+[resource]
+disable_ambient_light = true
+albedo_color = Color(0.44136548, 0.4413655, 0.4413655, 1)
+albedo_texture = ExtResource("1_nva6a")

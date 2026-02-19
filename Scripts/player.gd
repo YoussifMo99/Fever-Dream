@@ -24,6 +24,16 @@ func _ready():
 	color_rect.visible = false
 
 func _unhandled_input(event):
+	
+	#CRITICAL
+	#Heads up Youssif
+	#The web version does not correctly capture
+	#the mouse
+	
+	#
+	
+	
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event.is_action_pressed("ui_cancel"):
 		mouse_captured = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
