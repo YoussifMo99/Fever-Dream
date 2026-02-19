@@ -9,6 +9,7 @@ var in_water: bool = false
 var gravity = 40.0
 var mouse_captured := true
 
+var orbs = 0
 # Mouse smoothing fix (web bug)
 var last_mouse_delta := Vector2.ZERO
 const MAX_DELTA_CHANGE := 100.0
@@ -16,29 +17,21 @@ var current_delta
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 @onready var player: CharacterBody3D = $"."
 @onready var camera: Camera3D = $Camera3D
+@onready var password: CanvasLayer = $Password
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("player")
 	print("PLAYER READY - Groups: ", get_groups())
 	color_rect.visible = false
+	hide_ui($Password)
 
 func _unhandled_input(event):
-	
-	#CRITICAL
-	#Heads up Youssif
-	#The web version does not correctly capture
-	#the mouse
-	
-	#
-	
-	
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event.is_action_pressed("ui_cancel"):
 		mouse_captured = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		return
-	if event is InputEventMouseButton and event.pressed and not mouse_captured:
+	if event is InputEventMouseButton and event.pressed and not mouse_captured and not ui_open:
 		mouse_captured = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		return
@@ -52,7 +45,10 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
+
 func _physics_process(delta):
+	if ui_open:
+		return
 	if in_water:
 		velocity.y -= gravity * delta
 
@@ -131,3 +127,18 @@ func _on_waterarea_area_exited(area):
 		fade_tween = create_tween()
 		fade_tween.tween_property(underwater_sfx, "volume_db", -60.0, 0.4)
 		fade_tween.tween_callback(underwater_sfx.stop)
+
+
+
+
+var ui_open = false
+
+func show_ui(canvas_layer):
+	canvas_layer.visible = true
+	ui_open = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func hide_ui(canvas_layer):
+	canvas_layer.visible = false
+	ui_open = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

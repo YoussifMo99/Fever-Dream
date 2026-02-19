@@ -2,7 +2,8 @@ extends Node2D
 
 var entered_code = []
 var circles = []
-
+@onready var passwordui: CanvasLayer = $"/root/AllAssets/Player/Password"
+@onready var player: CharacterBody3D = $"/root/AllAssets/Player"
 func _ready():
 	circles = [
 		get_node("VBoxContainer/SCREEN/circle1"),
@@ -34,6 +35,7 @@ func _on_button_pressed(value):
 
 func _on_enter_pressed():
 	if entered_code == [1, 2, 3, 4]:
+		player.hide_ui(passwordui)
 		print("correct!")
 	else:
 		print("wrong!")

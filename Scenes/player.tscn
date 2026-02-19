@@ -32,8 +32,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.603, 0)
 current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1355168198]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2031980891]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -49,13 +51,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4696612, 0)
 shape = SubResource("SphereShape3D_v0iea")
 
 [node name="Password" type="CanvasLayer" parent="." unique_id=1439549713]
-visible = false
 
 [node name="PASSWORD" parent="Password" unique_id=1261077482 instance=ExtResource("2_cvnsp")]
-visible = false
 
 [node name="underwater" type="AudioStreamPlayer" parent="." unique_id=685310176]
 stream = ExtResource("3_6t5aa")
 volume_db = 10.236
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=888324303]
+
+[node name="Interact" type="CanvasLayer" parent="." unique_id=889356732]
+visible = false
+
+[node name="Label" type="Label" parent="Interact" unique_id=1771093647]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press \"E\" to interact"
+horizontal_alignment = 1
+vertical_alignment = 1

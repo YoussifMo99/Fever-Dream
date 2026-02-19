@@ -15,6 +15,10 @@ run/main_scene="uid://c8xh41wj1kidl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://d1fi3fdofcnac"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/portals/plugin.cfg")
