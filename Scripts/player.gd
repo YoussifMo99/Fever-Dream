@@ -30,7 +30,15 @@ func _ready():
 	color_rect.visible = false
 	hide_ui($Password)
 
+
 func _unhandled_input(event):
+	
+	#This gets enabled for browser export
+	#if password.visible == true:
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#else:
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#
 	if event.is_action_pressed("ui_cancel"):
 		mouse_captured = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

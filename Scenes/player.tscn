@@ -55,7 +55,7 @@ shape = SubResource("SphereShape3D_v0iea")
 
 [node name="underwater" type="AudioStreamPlayer" parent="." unique_id=685310176]
 stream = ExtResource("3_6t5aa")
-volume_db = 10.236
+volume_db = 4.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=888324303]
 

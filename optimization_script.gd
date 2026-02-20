@@ -7,6 +7,7 @@ extends Area3D
 @export var play: Array[AnimationPlayer]
 
 func _on_body_entered(body):
+	call_deferred("stop_monitoring")
 	self.monitoring = false
 	self.monitoring = false
 	#print(body, "entered optimization area")
@@ -25,3 +26,7 @@ func _on_body_entered(body):
 		for node in play:
 			if is_instance_valid(node):
 				node.play("1")
+
+func stop_monitoring():
+	self.monitoring = false
+	self.monitoring = false
