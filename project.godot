@@ -13,11 +13,13 @@ config_version=5
 config/name="Strange Places"
 run/main_scene="uid://bs5oqgaed33m3"
 config/features=PackedStringArray("4.6", "Forward Plus")
+run/max_fps=200
 config/icon="uid://d1fi3fdofcnac"
 
 [display]
 
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 

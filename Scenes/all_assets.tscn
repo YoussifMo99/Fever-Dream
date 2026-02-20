@@ -1109,7 +1109,6 @@ sky_mode = 1
 environment = SubResource("Environment_66fxe")
 
 [node name="fps_display" type="RichTextLabel" parent="." unique_id=390511875]
-visible = false
 offset_left = 10.0
 offset_top = 11.0
 offset_right = 99.0
@@ -2435,6 +2434,110 @@ mesh = SubResource("ArrayMesh_jvdve")
 transform = Transform3D(-0.99974555, 0, 0.022565093, 0, 1, 0, -0.022565093, 0, -0.99974555, 4.063965, -5.233658, 32.97532)
 shape = SubResource("ConcavePolygonShape3D_4yjpq")
 
+[node name="stoneblock30" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=761942528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.915649, -3.3549957, 43.5398)
+mesh = SubResource("ArrayMesh_ytd2b")
+
+[node name="CollisionShape3D40" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1322391782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.915649, -3.3549957, 43.5398)
+shape = SubResource("ConcavePolygonShape3D_omhrg")
+
+[node name="stoneblock31" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1818064189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.497559, -6.074585, 54.447754)
+mesh = SubResource("ArrayMesh_ytd2b")
+
+[node name="CollisionShape3D41" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1323934988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.497314, -6.074524, 54.445354)
+shape = SubResource("ConcavePolygonShape3D_omhrg")
+
+[node name="bigstonewall3" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1045862756]
+transform = Transform3D(-0.04272981, -1.6763806e-08, -0.9990867, -0.8371821, 0.545751, 0.035805322, 0.5452525, 0.8379475, -0.02331985, -10.248901, -6.2872925, 46.35422)
+mesh = SubResource("ArrayMesh_67ovl")
+
+[node name="CollisionShape3D42" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1131594006]
+transform = Transform3D(-0.04272981, -1.6763806e-08, -0.9990867, -0.8371821, 0.545751, 0.035805322, 0.5452525, 0.8379475, -0.02331985, -10.250732, -6.281067, 46.35929)
+shape = SubResource("ConcavePolygonShape3D_nqp20")
+
+[node name="stonetrack4" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=734461048]
+transform = Transform3D(0.9999988, -0.0015056758, 0, 0.0015056758, 0.9999988, 0, 0, 0, 1, -10.868774, -5.783325, 58.165306)
+mesh = SubResource("ArrayMesh_q0tn4")
+
+[node name="CollisionShape3D43" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1596658818]
+transform = Transform3D(0.9999988, -0.0015056758, 0, 0.0015056758, 0.9999988, 0, 0, 0, 1, -10.868774, -5.783325, 58.165306)
+shape = SubResource("ConcavePolygonShape3D_xmrnj")
+
+[node name="stonetrack5" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=792086377]
+transform = Transform3D(0.9999988, -0.0015056758, 0, 0.0015056758, 0.9999988, 0, 0, 0, 1, -10.868774, -5.783325, 59.39421)
+mesh = SubResource("ArrayMesh_q0tn4")
+
+[node name="CollisionShape3D44" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1832987160]
+transform = Transform3D(0.9999988, -0.0015056758, 0, 0.0015056758, 0.9999988, 0, 0, 0, 1, -10.868774, -5.783325, 59.39421)
+shape = SubResource("ConcavePolygonShape3D_xmrnj")
+
+[node name="bigstonewall4" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1653867221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.715454, -6.2872925, 60.371216)
+mesh = SubResource("ArrayMesh_67ovl")
+
+[node name="CollisionShape3D45" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1322601589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.717285, -6.281067, 60.37629)
+shape = SubResource("ConcavePolygonShape3D_nqp20")
+
+[node name="bigstonewall5" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=926267845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6346436, -4.0203247, 64.15803)
+mesh = SubResource("ArrayMesh_67ovl")
+
+[node name="CollisionShape3D46" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=64930787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6324463, -4.014084, 64.16308)
+shape = SubResource("ConcavePolygonShape3D_nqp20")
+
+[node name="bigstonewall6" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=2106619505]
+transform = Transform3D(0.38774082, 0, 0.92176837, 0, 1, 0, -0.92176837, 0, 0.38774082, 2.928955, -3.0832672, 64.5769)
+mesh = SubResource("ArrayMesh_67ovl")
+
+[node name="CollisionShape3D47" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1888785271]
+transform = Transform3D(0.38774082, 0, 0.92176837, 0, 1, 0, -0.92176837, 0, 0.38774082, 2.9328613, -3.0770264, 64.58054)
+shape = SubResource("ConcavePolygonShape3D_nqp20")
+
+[node name="stonetrack6" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1104226580]
+transform = Transform3D(-0.13594024, 0.00020468194, -0.990717, 0.0015056756, 0.9999988, -2.0600006e-10, 0.99071586, -0.0014916986, -0.13594039, -8.011841, -3.3801117, 61.5048)
+mesh = SubResource("ArrayMesh_q0tn4")
+
+[node name="CollisionShape3D48" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=976297345]
+transform = Transform3D(-0.13594024, 0.00020468216, -0.990717, 0.0015056758, 0.9999988, -1.5543041e-12, 0.99071586, -0.0014916987, -0.13594039, -8.011841, -3.3801117, 61.5048)
+shape = SubResource("ConcavePolygonShape3D_xmrnj")
+
+[node name="stonetrack7" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=198217864]
+transform = Transform3D(-0.13594024, 0.00020468194, -0.990717, 0.0015056756, 0.9999988, -2.0600006e-10, 0.99071586, -0.0014916986, -0.13594039, -7.1882324, -3.3801117, 61.62623)
+mesh = SubResource("ArrayMesh_q0tn4")
+
+[node name="CollisionShape3D49" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1619826838]
+transform = Transform3D(-0.13594024, 0.00020468216, -0.990717, 0.0015056758, 0.9999988, -1.5543041e-12, 0.99071586, -0.0014916987, -0.13594039, -7.1882324, -3.3801117, 61.62623)
+shape = SubResource("ConcavePolygonShape3D_xmrnj")
+
+[node name="bigcloudplatform4" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=2123113796]
+transform = Transform3D(0.3858578, 0, -0.92255825, 0, 1, 0, 0.92255825, 0, 0.3858578, 12.658081, -10.139526, 64.312744)
+mesh = SubResource("ArrayMesh_tjanc")
+surface_material_override/0 = SubResource("StandardMaterial3D_jvdve")
+
+[node name="bigcloudarea" type="Area3D" parent="Cloudlevel/cloudlevelstaticbody/bigcloudplatform4" unique_id=1332571999]
+script = ExtResource("37_x7uln")
+
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody/bigcloudplatform4/bigcloudarea" unique_id=795960726]
+transform = Transform3D(1, 0, 0, 0, 2.489705, 0, 0, 0, 1, -1.8919678, 0, -0.4033203)
+shape = SubResource("BoxShape3D_x7uln")
+
+[node name="CollisionShape3D50" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=773068515]
+transform = Transform3D(0.3858578, 0, -0.92255825, 0, 1, 0, 0.92255825, 0, 0.3858578, 12.658081, -10.139526, 64.312744)
+shape = SubResource("ConcavePolygonShape3D_6m7m2")
+
+[node name="stonetrack8" type="MeshInstance3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=227801890]
+transform = Transform3D(-0.13594024, 0.00020468194, -0.990717, 0.0015056756, 0.9999988, -2.0600006e-10, 0.99071586, -0.0014916986, -0.13594039, 21.154785, -3.3801117, 61.62623)
+mesh = SubResource("ArrayMesh_q0tn4")
+
+[node name="CollisionShape3D51" type="CollisionShape3D" parent="Cloudlevel/cloudlevelstaticbody" unique_id=1967656621]
+transform = Transform3D(-0.13594024, 0.00020468216, -0.990717, 0.0015056758, 0.9999988, -1.5543041e-12, 0.99071586, -0.0014916987, -0.13594039, 21.154785, -3.3801117, 61.62623)
+shape = SubResource("ConcavePolygonShape3D_xmrnj")
+
 [node name="cloudlevel" type="Node3D" parent="Cloudlevel" unique_id=1404330339 node_paths=PackedStringArray("exit_portal", "player_camera") groups=["portals"]]
 process_priority = 100
 process_physics_priority = 100
@@ -2499,6 +2602,38 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jvdve")
 transform = Transform3D(-8.4776616e-08, 0.7935982, 0, -1.8337982, -3.2799356e-08, 0.28006995, 0.63142735, 1.1293723e-08, 0.81338215, -57.05371, -10.866425, 40.638153)
 mesh = SubResource("ArrayMesh_tjanc")
 surface_material_override/0 = SubResource("StandardMaterial3D_jvdve")
+
+[node name="bigcloudplatform3" type="MeshInstance3D" parent="Cloudlevel" unique_id=937501026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8667, -32.257782, 107.68515)
+mesh = SubResource("ArrayMesh_tjanc")
+surface_material_override/0 = SubResource("StandardMaterial3D_jvdve")
+
+[node name="bigcloudarea" type="Area3D" parent="Cloudlevel/bigcloudplatform3" unique_id=1663684644]
+script = ExtResource("37_x7uln")
+
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="Cloudlevel/bigcloudplatform3/bigcloudarea" unique_id=618273386]
+transform = Transform3D(1, 0, 0, 0, 2.489705, 0, 0, 0, 1, -1.8919678, 0, -0.4033203)
+shape = SubResource("BoxShape3D_x7uln")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Cloudlevel" unique_id=2084404148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.891602, -32.257782, 107.68515)
+shape = SubResource("ConcavePolygonShape3D_6m7m2")
+
+[node name="bigcloudplatform4" type="MeshInstance3D" parent="Cloudlevel" unique_id=370075107]
+transform = Transform3D(0.3858578, 0, -0.92255825, 0, 1, 0, 0.92255825, 0, 0.3858578, -11.049805, -11.143097, 107.68515)
+mesh = SubResource("ArrayMesh_tjanc")
+surface_material_override/0 = SubResource("StandardMaterial3D_jvdve")
+
+[node name="bigcloudarea" type="Area3D" parent="Cloudlevel/bigcloudplatform4" unique_id=1598827073]
+script = ExtResource("37_x7uln")
+
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="Cloudlevel/bigcloudplatform4/bigcloudarea" unique_id=805618401]
+transform = Transform3D(1, 0, 0, 0, 2.489705, 0, 0, 0, 1, -1.8919678, 0, -0.4033203)
+shape = SubResource("BoxShape3D_x7uln")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Cloudlevel" unique_id=1083828897]
+transform = Transform3D(0.3858578, 0, -0.92255825, 0, 1, 0, 0.92255825, 0, 0.3858578, -11.049805, -11.143097, 107.68515)
+shape = SubResource("ConcavePolygonShape3D_6m7m2")
 
 [node name="forestarea" type="Area3D" parent="." unique_id=450401710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.751, 19, 3531.4126)
@@ -2584,7 +2719,7 @@ shape = SubResource("BoxShape3D_jvdve")
 [node name="Portal3D2" type="Node3D" parent="vent_shaft" unique_id=540215019 node_paths=PackedStringArray("exit_portal", "player_camera") groups=["portals"]]
 process_priority = 100
 process_physics_priority = 100
-transform = Transform3D(-0.06985908, 0, 0.115519315, 0, 0.13500002, 0, -0.115519315, 0, -0.06985908, -725.04364, 55.575485, -8.924404)
+transform = Transform3D(-0.032721166, 0, -0.13097453, 0, 0.135, 0, 0.13097453, 0, -0.032721166, -714.3366, 55.062492, 0.45533562)
 script = ExtResource("13_67ovl")
 _portal_mesh_path = NodePath("Portal3D_Mesh")
 _teleport_area_path = NodePath("TeleportArea")
@@ -2704,7 +2839,10 @@ outline_size = 9
 [connection signal="body_entered" from="NuclearPool/orbsarea4" to="NuclearPool/orbsarea4" method="_on_body_entered"]
 [connection signal="body_entered" from="Cloudlevel/cloudlevelstaticbody/Cloudplatform/cloudarea" to="Cloudlevel/cloudlevelstaticbody/Cloudplatform/cloudarea" method="_on_body_entered"]
 [connection signal="body_entered" from="Cloudlevel/cloudlevelstaticbody/bigcloudplatform/bigcloudarea" to="Cloudlevel/cloudlevelstaticbody/bigcloudplatform/bigcloudarea" method="_on_body_entered"]
+[connection signal="body_entered" from="Cloudlevel/cloudlevelstaticbody/bigcloudplatform4/bigcloudarea" to="Cloudlevel/cloudlevelstaticbody/bigcloudplatform4/bigcloudarea" method="_on_body_entered"]
 [connection signal="body_entered" from="Cloudlevel/Checkpoint" to="Cloudlevel/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="Cloudlevel/bigcloudplatform3/bigcloudarea" to="Cloudlevel/bigcloudplatform3/bigcloudarea" method="_on_body_entered"]
+[connection signal="body_entered" from="Cloudlevel/bigcloudplatform4/bigcloudarea" to="Cloudlevel/bigcloudplatform4/bigcloudarea" method="_on_body_entered"]
 [connection signal="body_entered" from="forestarea" to="forestarea" method="_on_body_entered"]
 [connection signal="body_exited" from="forestarea" to="forestarea" method="_on_body_exited"]
 [connection signal="body_entered" from="vent_shaft/passwordarea" to="vent_shaft/passwordarea" method="_on_body_entered"]
