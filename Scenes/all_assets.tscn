@@ -48,6 +48,7 @@
 [ext_resource type="Material" uid="uid://bvxhvu3iue4r8" path="res://Assets/vent_texture.tres" id="45_ytd2b"]
 [ext_resource type="Texture2D" uid="uid://c5uu5d37rm6fw" path="res://Assets/models/vent_shaft_vent_shaft_texture.jpg" id="46_omhrg"]
 [ext_resource type="Script" uid="uid://dtpqaa7fyxn2i" path="res://Scenes/passarea.gd" id="48_jvdve"]
+[ext_resource type="Script" uid="uid://d0opp2ht60k2f" path="res://ladder.gd" id="49_4yjpq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_icext"]
 panorama = ExtResource("2_d2rpu")
@@ -492,12 +493,27 @@ radius = 25.059082
 
 [sub_resource type="SphereMesh" id="SphereMesh_xmrnj"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yjpq"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytd2b"]
+next_pass = SubResource("StandardMaterial3D_4yjpq")
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.68235296, 0.21960784, 0, 1)
 emission_enabled = true
 emission = Color(0.68235296, 0.21960784, 0, 1)
 emission_energy_multiplier = 16.0
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_omhrg"]
 
@@ -979,6 +995,107 @@ data = PackedVector3Array(-0.0565, -0.023, 0.0307, -0.0885, -0.0175, -0.0334, -0
 [sub_resource type="BoxShape3D" id="BoxShape3D_80cqn"]
 size = Vector3(0.5863037, 0.45361328, 0.50390625)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ua6f"]
+size = Vector3(0.6088867, 1.466095, 0.3642578)
+
+[sub_resource type="FontFile" id="FontFile_5ua6f"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/138/0/ascent = 0.0
+cache/0/138/0/descent = 0.0
+cache/0/138/0/underline_position = 0.0
+cache/0/138/0/underline_thickness = 0.0
+cache/0/138/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_jvdve"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/221/0/ascent = 0.0
+cache/0/221/0/descent = 0.0
+cache/0/221/0/underline_position = 0.0
+cache/0/221/0/underline_thickness = 0.0
+cache/0/221/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_4yjpq"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/37/0/ascent = 0.0
+cache/0/37/0/descent = 0.0
+cache/0/37/0/underline_position = 0.0
+cache/0/37/0/underline_thickness = 0.0
+cache/0/37/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
 [node name="AllAssets" type="Node3D" unique_id=1343157809]
 script = ExtResource("1_7uyf5")
 
@@ -992,6 +1109,7 @@ sky_mode = 1
 environment = SubResource("Environment_66fxe")
 
 [node name="fps_display" type="RichTextLabel" parent="." unique_id=390511875]
+visible = false
 offset_left = 10.0
 offset_top = 11.0
 offset_right = 99.0
@@ -1195,16 +1313,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.987305, 1.2143085, 32.5416
 [node name="acient_portal" parent="Backrooms/acient_portal_3" unique_id=590798757 instance=ExtResource("11_ct85t")]
 transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, 0, 0, 0)
 
-[node name="CollisionShape" parent="Backrooms/acient_portal_3/acient_portal" index="0" unique_id=1245937666]
+[node name="CollisionShape" parent="Backrooms/acient_portal_3/acient_portal" index="0" unique_id=2082428351]
 transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0, 0, -3.730957)
 visible = false
 layers = 2
 
-[node name="Cube_007" parent="Backrooms/acient_portal_3/acient_portal" index="1" unique_id=1384963340]
+[node name="Cube_007" parent="Backrooms/acient_portal_3/acient_portal" index="1" unique_id=695354285]
 transform = Transform3D(0.13457054, -0.17367399, 0.97556555, -0.6880378, 0.6921176, 0.21812214, -0.71308815, -0.7005788, -0.026355624, -0.23165989, 7.2583456, -0.18115234)
 material_override = ExtResource("12_76sam")
 
-[node name="Plane" parent="Backrooms/acient_portal_3/acient_portal" index="2" unique_id=1810720357]
+[node name="Plane" parent="Backrooms/acient_portal_3/acient_portal" index="2" unique_id=476441142]
 transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0, 0, -0.15991211)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Backrooms/acient_portal_3/acient_portal" unique_id=1826902212]
@@ -1262,11 +1380,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.236816, 1.2143085, 32.541
 [node name="acient_portal" parent="Backrooms/acient_portal_4" unique_id=40716169 instance=ExtResource("11_ct85t")]
 transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, 0, 0, 0)
 
-[node name="CollisionShape" parent="Backrooms/acient_portal_4/acient_portal" index="0" unique_id=1245937666]
+[node name="CollisionShape" parent="Backrooms/acient_portal_4/acient_portal" index="0" unique_id=2082428351]
 visible = false
 layers = 2
 
-[node name="Cube_007" parent="Backrooms/acient_portal_4/acient_portal" index="1" unique_id=1384963340]
+[node name="Cube_007" parent="Backrooms/acient_portal_4/acient_portal" index="1" unique_id=695354285]
 material_override = ExtResource("12_76sam")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Backrooms/acient_portal_4/acient_portal" unique_id=1268066676]
@@ -1324,11 +1442,11 @@ shape = SubResource("BoxShape3D_sknsr")
 [node name="acient_portal" parent="PinkIsland" unique_id=187461931 instance=ExtResource("11_ct85t")]
 transform = Transform3D(-0.52668893, 0, 0.8500582, 0, 1, 0, -0.8500582, 0, -0.52668893, 60.209328, 13.501539, 3593.2234)
 
-[node name="CollisionShape" parent="PinkIsland/acient_portal" index="0" unique_id=1245937666]
+[node name="CollisionShape" parent="PinkIsland/acient_portal" index="0" unique_id=2082428351]
 visible = false
 layers = 2
 
-[node name="Cube_007" parent="PinkIsland/acient_portal" index="1" unique_id=1384963340]
+[node name="Cube_007" parent="PinkIsland/acient_portal" index="1" unique_id=695354285]
 material_override = ExtResource("12_76sam")
 
 [node name="Portal3D" type="Node3D" parent="PinkIsland/acient_portal" unique_id=1381654168 node_paths=PackedStringArray("exit_portal") groups=["portals"]]
@@ -1383,75 +1501,75 @@ omni_range = 13.098
 [node name="pink_tree_island_blockout (1)" parent="PinkIsland" unique_id=137869204 instance=ExtResource("16_xmrnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3584.5266)
 
-[node name="Tree" parent="PinkIsland/pink_tree_island_blockout (1)" index="0" unique_id=5442154]
+[node name="Tree" parent="PinkIsland/pink_tree_island_blockout (1)" index="0" unique_id=1785815711]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.266168, 23.83265, -13.95166)
 layers = 2
 
-[node name="Tree_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="1" unique_id=912545677]
+[node name="Tree_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="1" unique_id=738088419]
 layers = 2
 
-[node name="Tree_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="2" unique_id=2049347593]
+[node name="Tree_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="2" unique_id=56381501]
 layers = 2
 
-[node name="Tree_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="3" unique_id=539066422]
+[node name="Tree_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="3" unique_id=1040865225]
 layers = 2
 
-[node name="Tree_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="4" unique_id=1978978193]
+[node name="Tree_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="4" unique_id=371440246]
 layers = 2
 
-[node name="Rock" parent="PinkIsland/pink_tree_island_blockout (1)" index="5" unique_id=918481478]
+[node name="Rock" parent="PinkIsland/pink_tree_island_blockout (1)" index="5" unique_id=1861034323]
 layers = 2
 
-[node name="Rock_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="6" unique_id=1858249208]
+[node name="Rock_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="6" unique_id=396178364]
 layers = 2
 
-[node name="Rock_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="7" unique_id=277253296]
+[node name="Rock_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="7" unique_id=2037933048]
 layers = 2
 
-[node name="Tree_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="8" unique_id=1552075878]
+[node name="Tree_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="8" unique_id=1788493183]
 layers = 2
 
-[node name="Tree_006" parent="PinkIsland/pink_tree_island_blockout (1)" index="9" unique_id=231065957]
+[node name="Tree_006" parent="PinkIsland/pink_tree_island_blockout (1)" index="9" unique_id=1313245738]
 layers = 2
 
-[node name="Tree_007" parent="PinkIsland/pink_tree_island_blockout (1)" index="10" unique_id=1624305764]
+[node name="Tree_007" parent="PinkIsland/pink_tree_island_blockout (1)" index="10" unique_id=919262155]
 layers = 2
 
-[node name="Rock_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="11" unique_id=795711405]
+[node name="Rock_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="11" unique_id=1019971359]
 layers = 2
 
-[node name="Tree_008" parent="PinkIsland/pink_tree_island_blockout (1)" index="12" unique_id=318487014]
+[node name="Tree_008" parent="PinkIsland/pink_tree_island_blockout (1)" index="12" unique_id=1794876830]
 layers = 2
 
-[node name="Rock_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="13" unique_id=1030476237]
+[node name="Rock_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="13" unique_id=903246773]
 layers = 2
 
-[node name="Rock_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="14" unique_id=339440028]
+[node name="Rock_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="14" unique_id=31759589]
 layers = 2
 
-[node name="Grass1" parent="PinkIsland/pink_tree_island_blockout (1)" index="15" unique_id=269228545]
+[node name="Grass1" parent="PinkIsland/pink_tree_island_blockout (1)" index="15" unique_id=1418703553]
 layers = 2
 
-[node name="Plane_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="16" unique_id=389217394]
+[node name="Plane_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="16" unique_id=405253007]
 transform = Transform3D(1.1578236, 0, 0, 0, 1, 0, 0, 0, 1, 6.7694855, 0.4760133, -19.104492)
 layers = 2
 
-[node name="Grass1_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="17" unique_id=1208450110]
+[node name="Grass1_001" parent="PinkIsland/pink_tree_island_blockout (1)" index="17" unique_id=1561134590]
 layers = 2
 
-[node name="Grass1_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="18" unique_id=2012235713]
+[node name="Grass1_002" parent="PinkIsland/pink_tree_island_blockout (1)" index="18" unique_id=1485254486]
 layers = 2
 
-[node name="Grass1_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="19" unique_id=730634172]
+[node name="Grass1_003" parent="PinkIsland/pink_tree_island_blockout (1)" index="19" unique_id=706481851]
 layers = 2
 
-[node name="Grass1_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="20" unique_id=1766270257]
+[node name="Grass1_005" parent="PinkIsland/pink_tree_island_blockout (1)" index="20" unique_id=1782127293]
 layers = 2
 
-[node name="Grass1_006" parent="PinkIsland/pink_tree_island_blockout (1)" index="21" unique_id=991343783]
+[node name="Grass1_006" parent="PinkIsland/pink_tree_island_blockout (1)" index="21" unique_id=1747522753]
 layers = 2
 
-[node name="Grass1_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="22" unique_id=1860437460]
+[node name="Grass1_004" parent="PinkIsland/pink_tree_island_blockout (1)" index="22" unique_id=1540379457]
 layers = 2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PinkIsland/pink_tree_island_blockout (1)" unique_id=1861236017]
@@ -1475,16 +1593,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.190358, 14.775941, 3523.916
 [node name="acient_portal" parent="PinkIsland/acient_portal_2" unique_id=1785676674 instance=ExtResource("11_ct85t")]
 transform = Transform3D(-0.30167127, 0, 0.9534121, 0, 1, 0, -0.9534121, 0, -0.30167127, 0, 0, 0)
 
-[node name="CollisionShape" parent="PinkIsland/acient_portal_2/acient_portal" index="0" unique_id=1245937666]
+[node name="CollisionShape" parent="PinkIsland/acient_portal_2/acient_portal" index="0" unique_id=2082428351]
 visible = false
 layers = 2
 
-[node name="Cube_007" parent="PinkIsland/acient_portal_2/acient_portal" index="1" unique_id=1384963340]
+[node name="Cube_007" parent="PinkIsland/acient_portal_2/acient_portal" index="1" unique_id=695354285]
 transform = Transform3D(0.13457057, -0.17367397, 0.9755655, -0.6880378, 0.6921176, 0.21812214, -0.71308815, -0.7005788, -0.026355624, -0.23168945, 7.079776, -0.021484375)
 layers = 2
 material_override = ExtResource("12_76sam")
 
-[node name="Plane" parent="PinkIsland/acient_portal_2/acient_portal" index="2" unique_id=1810720357]
+[node name="Plane" parent="PinkIsland/acient_portal_2/acient_portal" index="2" unique_id=476441142]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, -0.1785698, 0)
 layers = 2
 
@@ -1577,45 +1695,45 @@ max_polyphony = 2
 [node name="living_room_prototype" parent="LivingRoom" unique_id=1953877599 instance=ExtResource("17_ytd2b")]
 transform = Transform3D(5.61, 0, 0, 0, 5.61, 0, 0, 0, 5.61, -2.3829424, 0, 0.21509123)
 
-[node name="Room_Walls" parent="LivingRoom/living_room_prototype" index="0" unique_id=1518558917]
+[node name="Room_Walls" parent="LivingRoom/living_room_prototype" index="0" unique_id=773663472]
 surface_material_override/0 = ExtResource("18_omhrg")
 surface_material_override/1 = ExtResource("19_jvdve")
 
-[node name="Table" parent="LivingRoom/living_room_prototype" index="1" unique_id=734704199]
+[node name="Table" parent="LivingRoom/living_room_prototype" index="1" unique_id=1312428147]
 surface_material_override/0 = ExtResource("20_4yjpq")
 
-[node name="Shelves" parent="LivingRoom/living_room_prototype" index="2" unique_id=1471288389]
+[node name="Shelves" parent="LivingRoom/living_room_prototype" index="2" unique_id=444667262]
 surface_material_override/0 = ExtResource("20_4yjpq")
 
-[node name="Lamp" parent="LivingRoom/living_room_prototype" index="5" unique_id=433408011]
+[node name="Lamp" parent="LivingRoom/living_room_prototype" index="5" unique_id=1104023665]
 surface_material_override/0 = ExtResource("18_omhrg")
 surface_material_override/1 = ExtResource("21_5ua6f")
 
-[node name="Painting" parent="LivingRoom/living_room_prototype" index="6" unique_id=1825112932]
+[node name="Painting" parent="LivingRoom/living_room_prototype" index="6" unique_id=261497810]
 surface_material_override/0 = ExtResource("20_4yjpq")
 
-[node name="Plant" parent="LivingRoom/living_room_prototype" index="7" unique_id=542326715]
+[node name="Plant" parent="LivingRoom/living_room_prototype" index="7" unique_id=1673066501]
 surface_material_override/1 = ExtResource("21_5ua6f")
 
-[node name="Coutch" parent="LivingRoom/living_room_prototype" index="9" unique_id=300231500]
+[node name="Coutch" parent="LivingRoom/living_room_prototype" index="9" unique_id=1031874675]
 surface_material_override/0 = ExtResource("21_5ua6f")
 
-[node name="CoutchHitbox" parent="LivingRoom/living_room_prototype" index="10" unique_id=1410516308]
+[node name="CoutchHitbox" parent="LivingRoom/living_room_prototype" index="10" unique_id=91589724]
 visible = false
 
-[node name="Coutch_001" parent="LivingRoom/living_room_prototype" index="11" unique_id=1603966288]
+[node name="Coutch_001" parent="LivingRoom/living_room_prototype" index="11" unique_id=5555466]
 surface_material_override/0 = ExtResource("21_5ua6f")
 
-[node name="CoutchHitbox_001" parent="LivingRoom/living_room_prototype" index="12" unique_id=1687068078]
+[node name="CoutchHitbox_001" parent="LivingRoom/living_room_prototype" index="12" unique_id=2026661650]
 visible = false
 
 [node name="acient_portal" parent="LivingRoom" unique_id=1513975180 instance=ExtResource("11_ct85t")]
 transform = Transform3D(-0.40898356, 0, -0.91254175, 0, 1, 0, 0.91254175, 0, -0.40898356, -3.327, 0.065, 8.937)
 
-[node name="CollisionShape" parent="LivingRoom/acient_portal" index="0" unique_id=1245937666]
+[node name="CollisionShape" parent="LivingRoom/acient_portal" index="0" unique_id=2082428351]
 visible = false
 
-[node name="Cube_007" parent="LivingRoom/acient_portal" index="1" unique_id=1384963340]
+[node name="Cube_007" parent="LivingRoom/acient_portal" index="1" unique_id=695354285]
 material_override = ExtResource("12_76sam")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="LivingRoom/acient_portal" unique_id=2051365004]
@@ -1712,11 +1830,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1641.4385)
 [node name="acient_portal" parent="NuclearPool" unique_id=251577730 instance=ExtResource("11_ct85t")]
 transform = Transform3D(-1.0000001, 0, -8.7422784e-08, 0, 1, 0, 8.7422784e-08, 0, -1.0000001, -9.992193, 26.999315, -15.716064)
 
-[node name="CollisionShape" parent="NuclearPool/acient_portal" index="0" unique_id=1245937666]
+[node name="CollisionShape" parent="NuclearPool/acient_portal" index="0" unique_id=2082428351]
 visible = false
 layers = 2
 
-[node name="Cube_007" parent="NuclearPool/acient_portal" index="1" unique_id=1384963340]
+[node name="Cube_007" parent="NuclearPool/acient_portal" index="1" unique_id=695354285]
 material_override = ExtResource("12_76sam")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NuclearPool/acient_portal" unique_id=471255394]
@@ -1789,45 +1907,45 @@ autoplay = true
 [node name="nuclear_pool" parent="NuclearPool" unique_id=1989713970 instance=ExtResource("22_80cqn")]
 transform = Transform3D(5.775, 0, 0, 0, 5.775, 0, 0, 0, 5.775, 30.667604, 0, 0)
 
-[node name="Cube" parent="NuclearPool/nuclear_pool" index="0" unique_id=282698226]
+[node name="Cube" parent="NuclearPool/nuclear_pool" index="0" unique_id=1532760009]
 layers = 8
 surface_material_override/0 = ExtResource("23_6m7m2")
 
-[node name="Cylinder" parent="NuclearPool/nuclear_pool" index="1" unique_id=1999358773]
+[node name="Cylinder" parent="NuclearPool/nuclear_pool" index="1" unique_id=1144373146]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021175385, 0, -0.0051841736)
 layers = 8
 surface_material_override/0 = ExtResource("23_6m7m2")
 surface_material_override/1 = ExtResource("24_ota2q")
 
-[node name="Cylinder_002" parent="NuclearPool/nuclear_pool" index="2" unique_id=90873940]
+[node name="Cylinder_002" parent="NuclearPool/nuclear_pool" index="2" unique_id=1581141391]
 layers = 8
 material_override = ExtResource("23_6m7m2")
 
-[node name="Cylinder_001" parent="NuclearPool/nuclear_pool" index="3" unique_id=1112982048]
+[node name="Cylinder_001" parent="NuclearPool/nuclear_pool" index="3" unique_id=843671068]
 layers = 8
 material_override = ExtResource("23_6m7m2")
 
-[node name="Cube_004" parent="NuclearPool/nuclear_pool" index="4" unique_id=1935659305]
+[node name="Cube_004" parent="NuclearPool/nuclear_pool" index="4" unique_id=425829589]
 layers = 8
 material_override = ExtResource("24_ota2q")
 
-[node name="Plane" parent="NuclearPool/nuclear_pool" index="5" unique_id=541637999]
+[node name="Plane" parent="NuclearPool/nuclear_pool" index="5" unique_id=369769964]
 visible = false
 layers = 8
 
-[node name="Cube_001" parent="NuclearPool/nuclear_pool" index="6" unique_id=1425709678]
+[node name="Cube_001" parent="NuclearPool/nuclear_pool" index="6" unique_id=1249900215]
 layers = 8
 surface_material_override/0 = ExtResource("24_ota2q")
 
-[node name="Cylinder_003" parent="NuclearPool/nuclear_pool" index="7" unique_id=910206344]
+[node name="Cylinder_003" parent="NuclearPool/nuclear_pool" index="7" unique_id=43976102]
 layers = 8
 surface_material_override/0 = ExtResource("23_6m7m2")
 
-[node name="Cylinder_004" parent="NuclearPool/nuclear_pool" index="8" unique_id=689737562]
+[node name="Cylinder_004" parent="NuclearPool/nuclear_pool" index="8" unique_id=991852521]
 layers = 8
 material_override = ExtResource("23_6m7m2")
 
-[node name="Cube_002" parent="NuclearPool/nuclear_pool" index="9" unique_id=2109374738]
+[node name="Cube_002" parent="NuclearPool/nuclear_pool" index="9" unique_id=2063300112]
 layers = 8
 material_override = ExtResource("24_ota2q")
 
@@ -1943,7 +2061,7 @@ mesh = SubResource("ArrayMesh_xoi51")
 shape = SubResource("BoxShape3D_sknsr")
 
 [node name="orbsarea" type="Area3D" parent="NuclearPool" unique_id=1949510592]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.728016, 12.482458, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.30513, 6.8660135, 16.344238)
 script = ExtResource("33_ytd2b")
 
 [node name="orbsmesh" type="MeshInstance3D" parent="NuclearPool/orbsarea" unique_id=1719443926]
@@ -1951,11 +2069,11 @@ mesh = SubResource("SphereMesh_xmrnj")
 surface_material_override/0 = SubResource("StandardMaterial3D_ytd2b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NuclearPool/orbsarea" unique_id=1967353357]
-transform = Transform3D(1.3859535, 0, 0, 0, 1.5281458, 0, 0, 0, 1.2392107, 0, 0, 0)
+transform = Transform3D(1.243, 0, 0, 0, 1.37, 0, 0, 0, 1.111, 0, 0, 0)
 shape = SubResource("BoxShape3D_omhrg")
 
 [node name="orbsarea2" type="Area3D" parent="NuclearPool" unique_id=827684256]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.354103, 12.482458, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.008112, -6.419639, 0)
 script = ExtResource("33_ytd2b")
 
 [node name="orbsmesh" type="MeshInstance3D" parent="NuclearPool/orbsarea2" unique_id=1818644316]
@@ -1963,7 +2081,7 @@ mesh = SubResource("SphereMesh_xmrnj")
 surface_material_override/0 = SubResource("StandardMaterial3D_ytd2b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NuclearPool/orbsarea2" unique_id=1146647733]
-transform = Transform3D(1.3859535, 0, 0, 0, 1.5281458, 0, 0, 0, 1.2392107, 0, 0, 0)
+transform = Transform3D(1.247, 0, 0, 0, 1.375, 0, 0, 0, 1.116, 0, 0, 0)
 shape = SubResource("BoxShape3D_omhrg")
 
 [node name="orbsarea3" type="Area3D" parent="NuclearPool" unique_id=30107043]
@@ -1975,11 +2093,11 @@ mesh = SubResource("SphereMesh_xmrnj")
 surface_material_override/0 = SubResource("StandardMaterial3D_ytd2b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NuclearPool/orbsarea3" unique_id=70849000]
-transform = Transform3D(1.3859535, 0, 0, 0, 1.5281458, 0, 0, 0, 1.2392107, 0, 0, 0)
+transform = Transform3D(1.243, 0, 0, 0, 1.37, 0, 0, 0, 1.111, 0, 0, 0)
 shape = SubResource("BoxShape3D_omhrg")
 
 [node name="orbsarea4" type="Area3D" parent="NuclearPool" unique_id=963974502]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.198015, 12.482458, -5.67334)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.00339, 12.482458, -5.67334)
 script = ExtResource("33_ytd2b")
 
 [node name="orbsmesh" type="MeshInstance3D" parent="NuclearPool/orbsarea4" unique_id=1062312765]
@@ -1987,7 +2105,7 @@ mesh = SubResource("SphereMesh_xmrnj")
 surface_material_override/0 = SubResource("StandardMaterial3D_ytd2b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NuclearPool/orbsarea4" unique_id=1587572267]
-transform = Transform3D(1.3859535, 0, 0, 0, 1.5281458, 0, 0, 0, 1.2392107, 0, 0, 0)
+transform = Transform3D(1.243, 0, 0, 0, 1.37, 0, 0, 0, 1.111, 0, 0, 0)
 shape = SubResource("BoxShape3D_omhrg")
 
 [node name="Cloudlevel" type="Node3D" parent="." unique_id=1548396151]
@@ -2372,6 +2490,16 @@ max_db = -24.0
 autoplay = true
 max_distance = 200.0
 
+[node name="bigcloudplatform" type="MeshInstance3D" parent="Cloudlevel" unique_id=1750905213]
+transform = Transform3D(-5.0730865e-08, 1, 0, 0.0014382271, 5.41682e-11, -0.4336198, -1.160586, -4.3711353e-08, -0.0005373525, -57.25293, 0.31271362, 40.00168)
+mesh = SubResource("ArrayMesh_tjanc")
+surface_material_override/0 = SubResource("StandardMaterial3D_jvdve")
+
+[node name="bigcloudplatform2" type="MeshInstance3D" parent="Cloudlevel" unique_id=1255006157]
+transform = Transform3D(-8.4776616e-08, 0.7935982, 0, -1.8337982, -3.2799356e-08, 0.28006995, 0.63142735, 1.1293723e-08, 0.81338215, -57.05371, -10.866425, 40.638153)
+mesh = SubResource("ArrayMesh_tjanc")
+surface_material_override/0 = SubResource("StandardMaterial3D_jvdve")
+
 [node name="forestarea" type="Area3D" parent="." unique_id=450401710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.751, 19, 3531.4126)
 collision_mask = 2
@@ -2390,23 +2518,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2755158, 2.659984, -0.0106
 [node name="vent_shaft" parent="." unique_id=1473370385 instance=ExtResource("44_xmrnj")]
 transform = Transform3D(7.295, 0, 0, 0, 7.295, 0, 0, 0, 7.295, 87.82631, 0, 94.67462)
 
-[node name="Ventalation Shaft" parent="vent_shaft" index="0" unique_id=1630023212]
+[node name="Ventalation Shaft" parent="vent_shaft" index="0" unique_id=1320414161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.0936327)
 layers = 32
 mesh = SubResource("ArrayMesh_80cqn")
 surface_material_override/0 = ExtResource("45_ytd2b")
 
-[node name="Table" parent="vent_shaft" index="1" unique_id=1085637949]
+[node name="Table" parent="vent_shaft" index="1" unique_id=1562061233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17258072, 0.09476383, 13.879617)
 layers = 32
 mesh = SubResource("ArrayMesh_ota2q")
 surface_material_override/0 = ExtResource("45_ytd2b")
 
-[node name="Computer" parent="vent_shaft" index="2" unique_id=1346529651]
+[node name="Computer" parent="vent_shaft" index="2" unique_id=2026321153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19175053, 0.13039729, 13.885383)
 layers = 32
 
-[node name="Cube" parent="vent_shaft" index="3" unique_id=39553328]
+[node name="Cube" parent="vent_shaft" index="3" unique_id=763166214]
 transform = Transform3D(0.33456048, 0, 0, 0, 0.33456048, 0, 0, 0, 0.019190859, -0.42055416, 0.29686666, 14.442681)
 layers = 32
 
@@ -2453,16 +2581,17 @@ mesh = SubResource("ArrayMesh_omhrg")
 [node name="Collider" type="CollisionShape3D" parent="vent_shaft/Portal3D/TeleportArea" unique_id=260945455]
 shape = SubResource("BoxShape3D_jvdve")
 
-[node name="Portal3D2" type="Node3D" parent="vent_shaft" unique_id=540215019 node_paths=PackedStringArray("exit_portal") groups=["portals"]]
+[node name="Portal3D2" type="Node3D" parent="vent_shaft" unique_id=540215019 node_paths=PackedStringArray("exit_portal", "player_camera") groups=["portals"]]
 process_priority = 100
 process_physics_priority = 100
-transform = Transform3D(-5.9919656e-09, 0, 0.1370802, 0, 0.1370802, 0, -0.1370802, 0, -5.9919656e-09, -725.0136, 55.976086, -9.098251)
+transform = Transform3D(-0.06985908, 0, 0.115519315, 0, 0.13500002, 0, -0.115519315, 0, -0.06985908, -725.04364, 55.575485, -8.924404)
 script = ExtResource("13_67ovl")
 _portal_mesh_path = NodePath("Portal3D_Mesh")
 _teleport_area_path = NodePath("TeleportArea")
 _teleport_collider_path = NodePath("TeleportArea/Collider")
 portal_size = Vector2(2.905, 3.32)
 exit_portal = NodePath("../Portal3D")
+player_camera = NodePath("../../Player/Camera3D")
 portal_frame_width = 0.0
 viewport_size_mode = 0
 view_direction = 0
@@ -2531,6 +2660,38 @@ script = ExtResource("48_jvdve")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13702393, 0.27319336, 0.31054497)
 shape = SubResource("BoxShape3D_80cqn")
 
+[node name="ladder" type="Area3D" parent="vent_shaft" unique_id=1123592013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60408115, -0.27625453, 8.147254)
+script = ExtResource("49_4yjpq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vent_shaft/ladder" unique_id=1403134196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17456245, -0.5723887, -0.40454292)
+shape = SubResource("BoxShape3D_5ua6f")
+
+[node name="5" type="Label3D" parent="." unique_id=1274396756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.70642, -5.541878, -1647.7397)
+modulate = Color(0.73333335, 0.73333335, 0.007843138, 1)
+text = "1"
+font = SubResource("FontFile_5ua6f")
+font_size = 138
+outline_size = 47
+
+[node name="7" type="Label3D" parent="." unique_id=1913100627]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -2584.5874, 13.984532, -37.87831)
+modulate = Color(0.7607843, 0, 0, 1)
+text = "7"
+font = SubResource("FontFile_jvdve")
+font_size = 221
+outline_size = 51
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1303063059]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.1309805, 4.968657, -0.4868039)
+modulate = Color(0.101960786, 0.19215687, 0.44313726, 1)
+text = "1"
+font = SubResource("FontFile_4yjpq")
+font_size = 31
+outline_size = 9
+
 [connection signal="body_entered" from="Backrooms/Optimization" to="Backrooms/Optimization" method="_on_body_entered"]
 [connection signal="body_entered" from="Backrooms/Optimization2" to="Backrooms/Optimization2" method="_on_body_entered"]
 [connection signal="body_entered" from="LivingRoom/Optimization2" to="LivingRoom/Optimization2" method="_on_body_entered"]
@@ -2547,6 +2708,8 @@ shape = SubResource("BoxShape3D_80cqn")
 [connection signal="body_entered" from="forestarea" to="forestarea" method="_on_body_entered"]
 [connection signal="body_exited" from="forestarea" to="forestarea" method="_on_body_exited"]
 [connection signal="body_entered" from="vent_shaft/passwordarea" to="vent_shaft/passwordarea" method="_on_body_entered"]
+[connection signal="body_entered" from="vent_shaft/ladder" to="vent_shaft/ladder" method="_on_body_entered"]
+[connection signal="body_exited" from="vent_shaft/ladder" to="vent_shaft/ladder" method="_on_body_exited"]
 
 [editable path="Backrooms/acient_portal_3/acient_portal"]
 [editable path="Backrooms/acient_portal_4/acient_portal"]

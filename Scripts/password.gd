@@ -37,7 +37,7 @@ func _on_button_pressed(value):
 		print(entered_code)
 
 func _on_enter_pressed():
-	if entered_code == [1, 2, 3, 4]:
+	if entered_code == [1, 7, 7, 1]:
 		door.play("open")
 		door.play("open")
 		print("is playing: ", door.is_playing())
@@ -50,3 +50,11 @@ func _on_enter_pressed():
 	entered_code.clear()
 	for circle in circles:
 		circle.modulate.a = 0
+		
+		
+		
+
+
+
+func _on_exit_pressed() -> void:
+	player.hide_ui(passwordui)

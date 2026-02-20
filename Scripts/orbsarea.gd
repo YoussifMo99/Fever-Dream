@@ -2,7 +2,6 @@ extends Area3D
 
 @onready var nuclearportal: Portal3D = $"../nuclearportal"
 @onready var player = $"../../Player"
-
 func _ready() -> void:
 	nuclearportal.deactivate()
 func _on_body_entered(body) -> void:
