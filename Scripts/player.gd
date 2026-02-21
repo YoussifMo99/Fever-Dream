@@ -31,6 +31,10 @@ func _ready():
 	hide_ui($Password)
 
 func _unhandled_input(event):
+	
+	
+	
+	
 	if event.is_action_pressed("ui_cancel"):
 		mouse_captured = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -40,10 +44,16 @@ func _unhandled_input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		return
 	if mouse_captured and event is InputEventMouseMotion:
+		
+		if ui_open:
+			return
+		
 		current_delta = event.relative
 		var delta_change = current_delta - last_mouse_delta
 		if delta_change.length() > MAX_DELTA_CHANGE:
 			return
+			
+			
 		last_mouse_delta = current_delta
 		player.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
@@ -129,7 +139,7 @@ func _on_waterarea_area_exited(area):
 		fade_tween.tween_property(underwater_sfx, "volume_db", -60.0, 0.4)
 		fade_tween.tween_callback(underwater_sfx.stop)
 
-var ui_open = false
+@export var ui_open = false
 
 func show_ui(canvas_layer):
 	canvas_layer.visible = true

@@ -5,7 +5,7 @@ var entered_code = []
 var circles = []
 @onready var passwordui: CanvasLayer = $"/root/AllAssets/Player/Password"
 @onready var player: CharacterBody3D = $"/root/AllAssets/Player"
-@onready var door: AnimationPlayer = $"../../../vent_shaft/door"
+@onready var door: AnimationPlayer = $"../../../vent_shaft/vent_shaft/door"
 
 func _ready():
 	circles = [

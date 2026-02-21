@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dl2xio08vqta4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yjpq"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_4yjpq")
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.3583839, 0.44659275, 1, 1)
+emission_enabled = true
+emission = Color(0.21870232, 0.4084479, 0.7215016, 1)
+emission_energy_multiplier = 10.68
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.0

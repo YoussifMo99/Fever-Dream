@@ -8,8 +8,6 @@ extends Area3D
 
 func _on_body_entered(body):
 	call_deferred("stop_monitoring")
-	self.monitoring = false
-	self.monitoring = false
 	#print(body, "entered optimization area")
 	if body.is_in_group("player"):
 		

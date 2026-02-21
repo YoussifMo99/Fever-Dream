@@ -4,6 +4,9 @@ extends MeshInstance3D
 @export var video: VideoStreamPlayer
 @export var audio: AudioStreamPlayer
 
+
+@export var intro_cutsene: bool
+
 func _ready():
 	await get_tree().physics_frame
 	video.play()

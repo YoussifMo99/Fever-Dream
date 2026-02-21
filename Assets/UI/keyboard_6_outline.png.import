@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/keyboard_6_outline.png-a28fab8acae950813d5ebe
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
