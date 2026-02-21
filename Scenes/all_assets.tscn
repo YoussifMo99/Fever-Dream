@@ -57,6 +57,7 @@
 [ext_resource type="Script" uid="uid://dtpqaa7fyxn2i" path="res://Scenes/passarea.gd" id="48_jvdve"]
 [ext_resource type="Script" uid="uid://d0opp2ht60k2f" path="res://ladder.gd" id="49_4yjpq"]
 [ext_resource type="PackedScene" uid="uid://ob7ydvgc0w" path="res://Scenes/fadetransition.tscn" id="57_r5ia8"]
+[ext_resource type="AudioStream" uid="uid://vpp7phwm548q" path="res://Assets/SFX/drop_004.ogg" id="58_xu14u"]
 
 [sub_resource type="Animation" id="Animation_80cqn"]
 length = 0.001
@@ -3689,7 +3690,7 @@ shape = SubResource("BoxShape3D_6m7m2")
 transform = Transform3D(2.9889963, 0, 0, 0, 2.9889963, 0, 0, 0, 52.108143, 1.2570343, -0.8873333, -752.5813)
 
 [node name="Ventalation Shaft" parent="vent_shaft/vent_shaft" index="0" unique_id=1320414161]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00084781647, -6.536493e-08, 7.095607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028877258, 0.015396479, 7.0955467)
 layers = 32
 mesh = SubResource("ArrayMesh_80cqn")
 surface_material_override/0 = ExtResource("45_ytd2b")
@@ -3835,7 +3836,16 @@ script = ExtResource("49_4yjpq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17456245, -0.5723887, -0.40454292)
 shape = SubResource("BoxShape3D_5ua6f")
 
+[node name="Label3D" type="Label3D" parent="vent_shaft/vent_shaft" unique_id=538268015]
+transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1, 0, -0.9999999, 0, -4.371139e-08, -0.7899771, 0.20511107, 11.018528)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.5609549, 0.5609549, 0.5609549, 1)
+text = "△  □  ⬠  ⬡"
+
 [node name="fadetransition" parent="." unique_id=2140217943 instance=ExtResource("57_r5ia8")]
+
+[node name="Drop004" type="AudioStreamPlayer" parent="." unique_id=1655290877]
+stream = ExtResource("58_xu14u")
 
 [connection signal="body_entered" from="Backrooms/Optimization" to="Backrooms/Optimization" method="_on_body_entered"]
 [connection signal="body_entered" from="Backrooms/Optimization2" to="Backrooms/Optimization2" method="_on_body_entered"]

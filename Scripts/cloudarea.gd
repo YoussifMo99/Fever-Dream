@@ -2,6 +2,7 @@ extends Area3D
 
 @export var launch_strength: float = 30.0
 @export var launch_direction: Vector3 = Vector3.UP
+@onready var drop_004: AudioStreamPlayer = $"../../../../Drop004"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,6 +10,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		drop_004.play()
 		print("jump")
 		body.velocity.y = launch_strength
 		# Optional: also boost horizontal if you want a directional pad
