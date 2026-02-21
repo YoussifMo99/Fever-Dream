@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://bs5oqgaed33m3"]
 
 [ext_resource type="Script" uid="uid://l6fpq0ak7fit" path="res://Scripts/mainmenu.gd" id="1_pposm"]
+[ext_resource type="AudioStream" uid="uid://cs2jle1scwy1b" path="res://Assets/SFX/tick_004.ogg" id="2_web8u"]
+[ext_resource type="PackedScene" uid="uid://ob7ydvgc0w" path="res://Scenes/fadetransition.tscn" id="3_rtnl3"]
 
 [node name="mainmenu" type="Node2D" unique_id=1032856137]
 script = ExtResource("1_pposm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1045628739]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1175458864]
+z_index = -6
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.554554, 0.554554, 0.55455387, 1)
 
 [node name="buttonmanager" type="Node2D" parent="." unique_id=1378747225]
 
@@ -20,6 +34,13 @@ offset_top = 361.0
 offset_right = 719.0
 offset_bottom = 415.0
 text = "options"
+
+[node name="Tick004" type="AudioStreamPlayer2D" parent="buttonmanager" unique_id=282945635]
+position = Vector2(546, 305)
+stream = ExtResource("2_web8u")
+
+[node name="fadetransition" parent="." unique_id=374935462 instance=ExtResource("3_rtnl3")]
+visible = false
 
 [connection signal="pressed" from="buttonmanager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="buttonmanager/Options" to="." method="_on_options_pressed"]

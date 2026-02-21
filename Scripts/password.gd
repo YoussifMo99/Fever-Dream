@@ -6,6 +6,13 @@ var circles = []
 @onready var passwordui: CanvasLayer = $"/root/AllAssets/Player/Password"
 @onready var player: CharacterBody3D = $"/root/AllAssets/Player"
 @onready var door: AnimationPlayer = $"../../../vent_shaft/vent_shaft/door"
+@onready var numbersound: AudioStreamPlayer2D = $Select006
+@onready var wrongsound: AudioStreamPlayer2D = $Error005
+@onready var correctsound: AudioStreamPlayer2D = $Confirmation002
+@onready var exitsound: AudioStreamPlayer2D = $Back003
+
+
+
 
 func _ready():
 	circles = [
@@ -32,12 +39,14 @@ func _ready():
 
 func _on_button_pressed(value):
 	if entered_code.size() < 4:
+		numbersound.play()
 		entered_code.append(value)
 		circles[entered_code.size() - 1].modulate.a = 1
 		print(entered_code)
 
 func _on_enter_pressed():
 	if entered_code == [1, 7, 7, 1]:
+		correctsound.play()
 		door.play("open")
 		door.play("open")
 		print("is playing: ", door.is_playing())
@@ -46,6 +55,7 @@ func _on_enter_pressed():
 		print("correct!")
 		correct = true
 	else:
+		wrongsound.play()
 		print("wrong!")
 	entered_code.clear()
 	for circle in circles:
@@ -57,4 +67,5 @@ func _on_enter_pressed():
 
 
 func _on_exit_pressed() -> void:
+	exitsound.play()
 	player.hide_ui(passwordui)

@@ -1,22 +1,22 @@
 extends Node2D
 
+@onready var fadetransitioncanvas: CanvasLayer = $fadetransition
+@onready var tick: AudioStreamPlayer2D = $buttonmanager/Tick004
+@onready var fadetransition: ColorRect = $fadetransition/fade_transition
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
- 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+var start_scene = preload("res://Scenes/all_assets.tscn")
+var options_scene = preload("res://Scenes/UI.tscn")
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/all_assets.tscn")
-	
-	
-	
-
+	tick.play()
+	fadetransitioncanvas.show()
+	fadetransition.fade_in()
+	await fadetransition.fade_finished
+	get_tree().change_scene_to_packed(start_scene)
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/UI.tscn")
+	tick.play()
+	fadetransitioncanvas.show()
+	fadetransition.fade_in()
+	await fadetransition.fade_finished
+	get_tree().change_scene_to_packed(options_scene)

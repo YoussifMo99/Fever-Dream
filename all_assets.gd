@@ -2,7 +2,12 @@ extends Node3D
 
 @export var Hide: Array[Node3D]
 
+@onready var fadetransition: ColorRect = $fadetransition/fade_transition
+@onready var fadetransitioncanvas: CanvasLayer = $fadetransition
 func _ready():
+	fadetransition.fade_out()
+	await fadetransition.fade_finished
+	fadetransitioncanvas.hide()
 	for node in Hide:
 		node.hide()
 
