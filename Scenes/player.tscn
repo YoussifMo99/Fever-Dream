@@ -18,6 +18,85 @@ collision_layer = 32769
 collision_mask = 32769
 script = ExtResource("1_v0iea")
 
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=2074713763]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=2120174099]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14917675, 0.17939445, 0.41575828, 0.25882354)
+
+[node name="Paused" type="RichTextLabel" parent="PauseMenu" unique_id=938597968]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 48.0
+offset_right = 231.0
+offset_bottom = 297.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 46
+theme_override_font_sizes/normal_font_size = 95
+bbcode_enabled = true
+text = "[center]PAUSED"
+
+[node name="Paused2" type="RichTextLabel" parent="PauseMenu" unique_id=371927430]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -99.0
+offset_right = 99.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 34
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]Sensitivity"
+
+[node name="HSlider" type="HSlider" parent="PauseMenu" unique_id=1256279380]
+offset_left = 435.0
+offset_top = 275.0
+offset_right = 730.0
+offset_bottom = 291.0
+focus_mode = 0
+max_value = 0.009
+step = 0.001
+value = 0.003
+
+[node name="Paused3" type="RichTextLabel" parent="PauseMenu" unique_id=1127726984]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = 4.0
+offset_right = 99.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 34
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]Volume"
+
+[node name="HSlider2" type="HSlider" parent="PauseMenu" unique_id=1567569352]
+offset_left = 435.0
+offset_top = 378.0
+offset_right = 730.0
+offset_bottom = 394.0
+focus_mode = 0
+min_value = -20.0
+max_value = 20.0
+step = 0.1
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1461526451 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4862976, 0)
 shape = SubResource("CapsuleShape3D_f60y1")
@@ -50,6 +129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4696612, 0)
 shape = SubResource("SphereShape3D_v0iea")
 
 [node name="Password" type="CanvasLayer" parent="." unique_id=1439549713]
+visible = false
 
 [node name="PASSWORD" parent="Password" unique_id=1261077482 instance=ExtResource("2_cvnsp")]
 
@@ -75,3 +155,7 @@ grow_vertical = 0
 text = "Press \"E\" to interact"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="value_changed" from="PauseMenu/HSlider" to="." method="_sensitivity_changed"]
+[connection signal="value_changed" from="PauseMenu/HSlider2" to="." method="_volume_value_changed"]
+[connection signal="correct_password" from="Password/PASSWORD" to="." method="_on_password_correct_password"]

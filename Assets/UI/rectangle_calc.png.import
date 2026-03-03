@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/rectangle_calc.png-25b58bb68424ab75cd505e683d
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

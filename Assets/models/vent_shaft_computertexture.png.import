@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgemx7hh8438s"
-path.s3tc="res://.godot/imported/vent_shaft_computertexture.png-6cdc72e4362c641ec0530a8be3e37913.s3tc.ctex"
+path="res://.godot/imported/vent_shaft_computertexture.png-6cdc72e4362c641ec0530a8be3e37913.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "e000a9ff2b5cf7050dae15905999c650"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/models/vent_shaft_computertexture.png"
-dest_files=["res://.godot/imported/vent_shaft_computertexture.png-6cdc72e4362c641ec0530a8be3e37913.s3tc.ctex"]
+dest_files=["res://.godot/imported/vent_shaft_computertexture.png-6cdc72e4362c641ec0530a8be3e37913.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -6,7 +6,7 @@ var speed
 var WALK_SPEED = 10.0
 var SPRINT_SPEED = 20.0
 var JUMP_VELOCITY = 15.0
-var SENSITIVITY = 0.004
+var SENSITIVITY = 0.003
 var in_water: bool = false
 var on_ladder: bool = false
 var gravity = 40.0
@@ -21,6 +21,9 @@ var current_delta
 @onready var camera: Camera3D = $Camera3D
 @onready var password: CanvasLayer = $Password
 
+signal correct_password
+
+
 func _ready():
 	config.load("user://settings.cfg")
 	SENSITIVITY = config.get_value("settings", "sensitivity", 0.004)
@@ -33,7 +36,21 @@ func _ready():
 func _unhandled_input(event):
 	
 	
+	if Input.is_action_just_pressed("pause"):
+		print("PAUSE")
+		if $PauseMenu.visible == true:
+			$PauseMenu.visible = false
+		elif $PauseMenu.visible == false:
+			$PauseMenu.visible = true
+
 	
+	if $PauseMenu.visible == true:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		return
+	
+	
+	if !ui_open:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if event.is_action_pressed("ui_cancel"):
 		mouse_captured = false
@@ -59,7 +76,17 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
+
 func _physics_process(delta):
+	
+	
+	#if $PauseMenu.visible == true or $Password.visible == true:
+		#ui_open = true
+	#else:
+		#ui_open = false
+	
+	
+	
 	if ui_open:
 		return
 	if on_ladder:
@@ -150,3 +177,14 @@ func hide_ui(canvas_layer):
 	canvas_layer.visible = false
 	ui_open = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_password_correct_password():
+	correct_password.emit()
+
+
+func _sensitivity_changed(value):
+	SENSITIVITY = value
+
+func _volume_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)

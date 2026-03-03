@@ -4,8 +4,8 @@ extends MeshInstance3D
 @export var video: VideoStreamPlayer
 @export var audio: AudioStreamPlayer
 
-
 @export var intro_cutsene: bool
+
 
 func _ready():
 	await get_tree().physics_frame
@@ -14,8 +14,14 @@ func _ready():
 
 func _process(_delta):
 	
-	var x = self.global_position.distance_to(player.global_position)
-	audio.volume_db = clamp(remap(x, 0, 13.0, -3.0, -50.0), -80.0, -6.0)
+	if !intro_cutsene:
+		var x = self.global_position.distance_to(player.global_position)
+		audio.volume_db = clamp(remap(x, 0, 19.0, -3.0, -40.0), -80.0, -6.0)
+	else:
+		var x = self.global_position.distance_to(player.global_position)
+		audio.volume_db = 2*clamp(remap(x, 0, 19.0, -3.0, -40.0), -80.0, -6.0)
+
+
 
 	if video.is_playing() == false:
 		_play()

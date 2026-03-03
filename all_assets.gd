@@ -30,3 +30,7 @@ func _unhandled_key_input(event):
 
 	if !ani.is_playing():
 		skip_text.visible = false
+
+
+func _on_player_correct_password():
+	$vent_shaft/CorrectPassword.play("1")

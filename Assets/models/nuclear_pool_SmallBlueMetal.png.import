@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmetidlbyrmbg"
-path.s3tc="res://.godot/imported/nuclear_pool_SmallBlueMetal.png-5f417db88735be8bc2b82459b14141e5.s3tc.ctex"
+path="res://.godot/imported/nuclear_pool_SmallBlueMetal.png-5f417db88735be8bc2b82459b14141e5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "6a9170376a0e53d3c6173e18f87ee686"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/models/nuclear_pool_SmallBlueMetal.png"
-dest_files=["res://.godot/imported/nuclear_pool_SmallBlueMetal.png-5f417db88735be8bc2b82459b14141e5.s3tc.ctex"]
+dest_files=["res://.godot/imported/nuclear_pool_SmallBlueMetal.png-5f417db88735be8bc2b82459b14141e5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

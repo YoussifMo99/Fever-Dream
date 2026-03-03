@@ -3,6 +3,56 @@
 [ext_resource type="Script" uid="uid://l6fpq0ak7fit" path="res://Scripts/mainmenu.gd" id="1_pposm"]
 [ext_resource type="AudioStream" uid="uid://cs2jle1scwy1b" path="res://Assets/SFX/tick_004.ogg" id="2_web8u"]
 [ext_resource type="PackedScene" uid="uid://ob7ydvgc0w" path="res://Scenes/fadetransition.tscn" id="3_rtnl3"]
+[ext_resource type="AudioStream" uid="uid://b42tbg3pqgbcl" path="res://sounds/Maarten Schellekens - Autumn Leaves (Original).mp3" id="4_v4pkt"]
+[ext_resource type="PackedScene" uid="uid://diipelckshmuh" path="res://Assets/models/nuclear_pool.glb" id="6_eybw1"]
+[ext_resource type="Material" uid="uid://bucvnv4qdlfu4" path="res://Assets/nuclear_pool.tres" id="7_hu3kb"]
+[ext_resource type="Material" uid="uid://d3hlitib57j8x" path="res://Assets/nuclear_metal.tres" id="8_vv4ip"]
+[ext_resource type="Shader" uid="uid://cqnceuu1kcwet" path="res://nuclear_water.gdshader" id="9_awugs"]
+[ext_resource type="Script" uid="uid://dp2xyigc473kd" path="res://Scenes/sfx.gd" id="9_t8w0y"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2jq6c"]
+size = Vector2(10.33, 11.92)
+subdivide_width = 5
+subdivide_depth = 5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_72gy5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sj1yd"]
+height = 686
+noise = SubResource("FastNoiseLite_72gy5")
+seamless = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_45oxd"]
+width = 474
+height = 663
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wkh3"]
+render_priority = 0
+shader = ExtResource("9_awugs")
+shader_parameter/surfacecolour = Color(0.0931774, 0.14692345, 0.25152963, 1)
+shader_parameter/volumecolour = Color(0.31354907, 0.43938014, 0.6878337, 1)
+shader_parameter/AirIOR = 0.425
+shader_parameter/IOR = 0.52
+shader_parameter/sampler1speed = Vector2(0.02, -0.02)
+shader_parameter/sampler2speed = Vector2(0.01, 0.02)
+shader_parameter/samplermix = 0.5
+shader_parameter/samplerscale = Vector2(0.025, 0.03)
+shader_parameter/normal1tex = SubResource("NoiseTexture2D_sj1yd")
+shader_parameter/normal2tex = SubResource("NoiseTexture2D_45oxd")
+shader_parameter/normalstrength = 0.0499999988824
+shader_parameter/height1tex = SubResource("NoiseTexture2D_sj1yd")
+shader_parameter/height2tex = SubResource("NoiseTexture2D_sj1yd")
+shader_parameter/heightstrength = 0.12
+shader_parameter/edge1tex = SubResource("NoiseTexture2D_sj1yd")
+shader_parameter/edge2tex = SubResource("NoiseTexture2D_sj1yd")
+shader_parameter/refrationamount = 0.23999999463552
+shader_parameter/fog_underwater = true
+shader_parameter/edge_size = 0.11999999731776
+shader_parameter/foam_or_fade = true
+shader_parameter/far_clip = 50.0
+shader_parameter/steps = 512
+shader_parameter/ssr_screen_fade = 0.05
 
 [node name="mainmenu" type="Node2D" unique_id=1032856137]
 script = ExtResource("1_pposm")
@@ -11,6 +61,7 @@ script = ExtResource("1_pposm")
 layer = -5
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1175458864]
+visible = false
 z_index = -6
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,18 +73,34 @@ color = Color(0.554554, 0.554554, 0.55455387, 1)
 [node name="buttonmanager" type="Node2D" parent="." unique_id=1378747225]
 
 [node name="Start" type="Button" parent="buttonmanager" unique_id=1225767271]
-offset_left = 420.0
-offset_top = 203.0
-offset_right = 728.0
-offset_bottom = 257.0
-text = "start"
+offset_left = 22.0
+offset_top = 178.0
+offset_right = 330.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.45490196, 0.8980392, 1, 1)
+theme_override_constants/outline_size = 39
+theme_override_font_sizes/font_size = 37
+text = "START"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="buttonmanager/Start" unique_id=788408054]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -147.0
+offset_right = 747.0
+offset_bottom = -13.0
+theme_override_constants/outline_size = 46
+theme_override_font_sizes/normal_font_size = 83
+text = "Pass The Portals"
 
 [node name="Options" type="Button" parent="buttonmanager" unique_id=1805463432]
-offset_left = 411.0
-offset_top = 361.0
-offset_right = 719.0
-offset_bottom = 415.0
-text = "options"
+offset_left = -339.0
+offset_top = 178.0
+offset_right = -29.0
+offset_bottom = 273.0
+theme_override_colors/font_color = Color(0.45490196, 0.8980392, 1, 1)
+theme_override_constants/outline_size = 36
+theme_override_font_sizes/font_size = 36
+text = "OPTIONS"
 
 [node name="Tick004" type="AudioStreamPlayer2D" parent="buttonmanager" unique_id=282945635]
 position = Vector2(546, 305)
@@ -42,5 +109,115 @@ stream = ExtResource("2_web8u")
 [node name="fadetransition" parent="." unique_id=374935462 instance=ExtResource("3_rtnl3")]
 visible = false
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1020329724]
+stream = ExtResource("4_v4pkt")
+volume_db = -10.0
+autoplay = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=650285074]
+transform = Transform3D(-0.85390216, -0.39487928, 0.33900076, 0.059431173, 0.57313305, 0.81730443, -0.51702905, 0.71804523, -0.4659314, 43.89147, 50.752953, -22.270374)
+fov = 47.8
+
+[node name="NuclearPool" type="Node3D" parent="." unique_id=1013573391]
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="NuclearPool" unique_id=1932070479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.284115, 4.1942, -2.3304443)
+light_color = Color(0.5489518, 0.82359296, 1, 1)
+light_energy = 10.255
+light_bake_mode = 0
+omni_range = 54.196835
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="NuclearPool" unique_id=2083512841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.362827, 4.1942, 2.402954)
+light_color = Color(0.62031615, 0.80512995, 1, 1)
+light_energy = 6.874
+light_bake_mode = 0
+omni_range = 29.149906
+
+[node name="nuclear_pool" parent="NuclearPool" unique_id=506826492 instance=ExtResource("6_eybw1")]
+transform = Transform3D(5.775, 0, 0, 0, 5.775, 0, 0, 0, 5.775, 30.667604, 0, 0)
+
+[node name="Cube" parent="NuclearPool/nuclear_pool" index="0" unique_id=282698226]
+layers = 8
+surface_material_override/0 = ExtResource("7_hu3kb")
+
+[node name="Cylinder" parent="NuclearPool/nuclear_pool" index="1" unique_id=1999358773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021175385, 0, -0.0051841736)
+layers = 8
+surface_material_override/0 = ExtResource("7_hu3kb")
+surface_material_override/1 = ExtResource("8_vv4ip")
+
+[node name="Cylinder_002" parent="NuclearPool/nuclear_pool" index="2" unique_id=90873940]
+layers = 8
+material_override = ExtResource("7_hu3kb")
+
+[node name="Cylinder_001" parent="NuclearPool/nuclear_pool" index="3" unique_id=1112982048]
+layers = 8
+material_override = ExtResource("7_hu3kb")
+
+[node name="Cube_004" parent="NuclearPool/nuclear_pool" index="4" unique_id=1935659305]
+layers = 8
+material_override = ExtResource("8_vv4ip")
+
+[node name="Plane" parent="NuclearPool/nuclear_pool" index="5" unique_id=541637999]
+visible = false
+layers = 8
+
+[node name="Cube_001" parent="NuclearPool/nuclear_pool" index="6" unique_id=1425709678]
+layers = 8
+surface_material_override/0 = ExtResource("8_vv4ip")
+
+[node name="Cylinder_003" parent="NuclearPool/nuclear_pool" index="7" unique_id=910206344]
+layers = 8
+surface_material_override/0 = ExtResource("7_hu3kb")
+
+[node name="Cylinder_004" parent="NuclearPool/nuclear_pool" index="8" unique_id=689737562]
+layers = 8
+material_override = ExtResource("7_hu3kb")
+
+[node name="Cube_002" parent="NuclearPool/nuclear_pool" index="9" unique_id=2109374738]
+layers = 8
+material_override = ExtResource("8_vv4ip")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NuclearPool" unique_id=1833994174]
+transform = Transform3D(-5.775, 8.720008e-07, 0, -8.720008e-07, -5.775, 0, 0, 0, 5.775, 31.049091, 20.447363, 0)
+mesh = SubResource("PlaneMesh_2jq6c")
+surface_material_override/0 = SubResource("ShaderMaterial_8wkh3")
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="NuclearPool" unique_id=144319779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.479523, 54.375443, 3.3525085)
+light_color = Color(0.31673118, 0.31587556, 0.7721288, 1)
+light_energy = 2.316
+light_indirect_energy = 1.21
+light_bake_mode = 0
+omni_range = 92.62479
+
+[node name="SFX" type="HSlider" parent="." unique_id=1079715281]
+modulate = Color(0, 1, 1, 1)
+offset_left = 423.0
+offset_top = 622.0
+offset_right = 698.0
+offset_bottom = 638.0
+rotation = -0.49384677
+min_value = -20.0
+max_value = 20.0
+step = 0.1
+script = ExtResource("9_t8w0y")
+
+[node name="Label" type="Label" parent="SFX" unique_id=969945307]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -41.0
+offset_right = 71.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.45490196, 0.8980392, 1, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 23
+text = "Volume
+"
+
 [connection signal="pressed" from="buttonmanager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="buttonmanager/Options" to="." method="_on_options_pressed"]
+[connection signal="value_changed" from="SFX" to="SFX" method="_on_volume_changed"]
+
+[editable path="NuclearPool/nuclear_pool"]

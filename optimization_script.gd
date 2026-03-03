@@ -7,6 +7,7 @@ extends Area3D
 @export var play: Array[AnimationPlayer]
 
 func _on_body_entered(body):
+	print("Player passed")
 	call_deferred("stop_monitoring")
 	#print(body, "entered optimization area")
 	if body.is_in_group("player"):

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://384hrk5f1ict"]
+
+[ext_resource type="PackedScene" uid="uid://cfu152yebm8qj" path="res://Assets/models/pink_lod_3.glb" id="1_w676y"]
+[ext_resource type="PackedScene" uid="uid://cg3u348s2xhv" path="res://Assets/models/PinkTreeCrossSection.glb" id="2_vmgal"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_haa4r"]
+height = 7.618164
+radius = 0.45263672
+
+[node name="PinkTree" type="Node3D" unique_id=1252731901]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1625274752]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1954470983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11599189, 2.809082, 0)
+shape = SubResource("CylinderShape3D_haa4r")
+
+[node name="pink_lod_3" parent="." unique_id=773890412 instance=ExtResource("1_w676y")]
+
+[node name="crown merged_normal leaves_0" parent="pink_lod_3" index="0" unique_id=1660825317]
+visibility_range_end = 1000.0
+
+[node name="PinkTreeCrossSection" parent="." unique_id=1320711407 instance=ExtResource("2_vmgal")]
+
+[node name="Plane" parent="PinkTreeCrossSection" index="0" unique_id=1768516285]
+visibility_range_begin = 100.0
+visibility_range_end = 200.0
+
+[editable path="pink_lod_3"]
+[editable path="PinkTreeCrossSection"]

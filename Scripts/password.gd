@@ -1,5 +1,7 @@
 extends Node2D
 
+signal correct_password
+
 var correct = false
 var entered_code = []
 var circles = []
@@ -45,8 +47,9 @@ func _on_button_pressed(value):
 		print(entered_code)
 
 func _on_enter_pressed():
-	if entered_code == [1, 7, 7, 1]:
+	if entered_code == [1, 2, 3, 4]:
 		correctsound.play()
+		correct_password.emit()
 		door.play("open")
 		door.play("open")
 		print("is playing: ", door.is_playing())
